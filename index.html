@@ -29,6 +29,10 @@
                 <!-- <li><a href="#doc path" download="CV">RESUME</a></li> -->
             </menu>
         </nav>
+        <div>
+            <img src="assests/img/github.svg" alt="">
+            <img src="assests/img/telegram.svg" alt="">
+        </div>
     </header>
 
     <main>
@@ -49,7 +53,9 @@
                     Through out this portfolio i would like to show u some of my works and my skills and i welcome you to give me feedback or inquiries if you may have</p>
             </article>
             
-            <aside></aside>
+            <aside>
+                <img src="assests/img/myImg.jpeg" alt="" width="220" height="400">
+            </aside>
         </section>
 
         <section id="myEducation">
@@ -125,12 +131,13 @@
         <section>
             <h4 ><u>Reach me</u></h4>
             <article>
-                <p>Got a question or a proposal or just want to say hi ? Go ahead feel free</p>
-                <input type="text" size="50" placeholder="name">
-                <input type="email" size="50" placeholder="email">
-                <input type="text" size="50" placeholder="what you have to say">
-                <input type="text" size="50" placeholder="name">
-                <input type="button" size="50" value="send->">
+                <form action="Data" method="post">
+                    <p>Got a question or a proposal or just want to say hi ? Go ahead feel free</p>
+                    <input name="Name" type="text" size="50" placeholder="name" required>
+                    <input name="email" type="email" size="50" placeholder="email" required>
+                    <input name="description" type="text" size="50" placeholder="what you have to say" required>
+                    <button type="submit">Send</button>
+                </form>
             </article>
         </section>
 
