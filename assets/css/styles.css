@@ -1,0 +1,33 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+}
+
+nav {
+    text-align: right; /* Center the menu links */
+}
+
+menu {
+    display: inline-block; /* Make the menu a block element so it can be centered */
+}
+
+menu a {
+    color: white;
+    margin: 0 20px; /* Add some margin to create space between the links */
+}
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align the images to the right */
+    flex-grow: 1; /* Make the div grow to fill the remaining space */
+}
+
+div img {
+    margin-left: 10px;
+}
+
+
