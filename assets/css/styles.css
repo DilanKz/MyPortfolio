@@ -1,33 +1,61 @@
+*{
+    background-color: #03001C;
+    color: #ffeee8;
+    margin-left: 1vw;
+}
 header {
+
+    background-color: #03001C;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: black;
     padding: 10px 20px;
+    position: sticky;
+    top: 0;
+
 }
 
 nav {
-    text-align: right; /* Center the menu links */
-}
-
-menu {
-    display: inline-block; /* Make the menu a block element so it can be centered */
+    position: absolute;
+    right: 10vw;
 }
 
 menu a {
-    color: white;
-    margin: 0 20px; /* Add some margin to create space between the links */
+    color: #ffeee8;
+    margin-left:20px;
+    text-decoration: none;
 }
 
-div {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Align the images to the right */
-    flex-grow: 1; /* Make the div grow to fill the remaining space */
+menu a:hover{
+    color: #efd6cc;
 }
 
-div img {
-    margin-left: 10px;
+header > div {
+    display: inline-block;
+    position: absolute;
+    right: 2vw;
 }
 
+header>div>img{
+    margin-right: 5px;
+}
 
+.betweenSpaces{
+    width: 20vw;
+    height: 15vh;
+}
+
+#mainAbout{
+    margin-left: 80px;
+}
+
+#mainAbout > h3 {
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
+#mainAbout > span {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 8vh;
+    font-family: 'Abril Fatface', cursive;
+}
