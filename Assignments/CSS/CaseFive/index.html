@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <style>
+        section{
+            position: relative;
+            top: 20px;
+            left: 20px;
+            height: 400px;
+            width: 1300px;
+            display: flex;
+            border: solid red 2px;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+
+        div{
+            border: solid black 1px;
+            height: 33.2%;
+            width: 33.2%;/*flex-basis*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /*flex-shrink: 1;*/
+        }
+
+        section>div:nth-child(1){
+            background-color: red;
+            order: 3;
+        }
+
+        section>div:nth-child(2){
+            /*align-self: center;*/
+            background-color: orange;
+            order: 1;
+        }
+
+        section>div:nth-child(3){
+            /*flex-grow: 1;*/
+            /*align-self: flex-end;*/
+            background-color: yellow;
+            order: 4;
+        }
+
+        section>div:nth-child(4){
+            /*flex-grow: 1;*/
+            /*align-self: flex-end;*/
+            background-color: indigo;
+            order: 2;
+        }
+
+    </style>
+</head>
+<body>
+
+<section>
+    <div>A</div>
+    <div>B</div>
+    <div>C</div>
+    <div>D</div>
+</section>
+
+</body>
+</html>
