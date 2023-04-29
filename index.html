@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>My Web Page | Dilan</title>
@@ -11,8 +11,8 @@
     <meta name="theme-color" content="red">
     <meta name="viewport" content="width=device-width initial-scale=1 user-scalable=no">
 
-    <link rel="icon" href="favIcon.png">
-    <link rel="canonical" href="favIcon.png">
+    <link rel="icon" href="assets/img/favIcon.png">
+    <link rel="canonical" href="assets/img/favIcon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,14 +23,14 @@
 </head>
 <body>
     <header>
-        <img src="assets/img/portfolio.png" height="50" width="50">
+        <img src="assets/img/portfolio.png" height="50" width="50" alt="">
         <nav>
             <menu >
-                <a href="#aboutMe" >about me</a>
+                <a href="#aboutMe" >About Me</a>
                 <a href="#myEducation" >Education And Skills</a>
                 <a href="#workExp" >Work Experience</a>
                 <a href="#myWorks" >My Works</a>
-                <a href="#contact" >Contact</a>
+                <a href="#contact" >Contacts</a>
                 <!-- <li><a href="#doc path" download="CV">RESUME</a></li> -->
             </menu>
         </nav>
@@ -42,74 +42,125 @@
 
     <main>
 
-        <div class="betweenSpaces"></div>
+        <div id="space" class="betweenSpaces"></div>
 
         <section id="mainAbout">
-            <h3>Hello</h3>
-            <h3>My name is</h3>
-            <span>Tharindu Dilan .</span>
-            <p>I'm a Software Developer</p>
-            <h2></h2>
+            <h3>Hello</h3><h3>!</h3>
+            <h3>My name is </h3><br>
+            <span>Tharindu </span>
+            <span class="lastDetail"> Dilan .</span>
+            <br>
+            <p>I'm a </p>
+            <p class="lastDetail"> Full-Stack Developer</p>
+            <br>
+            <a href="">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Resume
+            </a>
         </section>
 
+        <div id="firstSpace" class="Spaces"></div>
         <div id="aboutMe" class="betweenSpaces"></div>
 
-        <section>
+        <section id="aboutMeSection" class="mainSection">
             <h3>ABOUT ME</h3>
-            
+            <div class="boldLineLong"></div>
+            <div class="boldLineShort"></div>
+
             <article>
-                    <p>My name is Tharindu Dilan and I am 21 years old software engineer from Sri lanka. Currently, I am studying software Engineering at IJSE.
-                    As a software engineering student I am passionate about creating new software solutions. And I enjoy implementing new ideas to my projects. Till now i have learned and mastered programming languages such as python, java, c++ also web developing and Database management
+                    <p>My name is Tharindu Dilan and I am 21 years old software engineer from Sri lanka. Currently,<br><br> I am studying software Engineering at IJSE.
+                    As a software engineering student I am passionate about creating new software solutions. And I enjoy implementing new ideas to my projects.<br><br> Till now i have learned and mastered programming languages such as python, java, c++ also web developing and Database management
                     Through out this portfolio I would like to show u some of my works and my skills, and I welcome you to give me feedback or inquiries if you may have</p>
             </article>
+            <div id="aboutMeBorder"></div>
             
             <aside>
-<!--                <img src="assets/img/myImg.jpeg" alt="" width="220" height="320">-->
+                <!--<img src="assets/img/myImg.jpeg" alt="">-->
             </aside>
         </section>
 
+        <div class="Spaces"></div>
         <div id="myEducation" class="betweenSpaces"></div>
 
-        <section >
-            <h3>MY EDUCATION</h3>
+        <section class="mainSection" id="EnSMainSection">
+            <h3>EDUCATION & SKILLS</h3>
+            <div class="boldLineLong"></div>
+            <div class="boldLineShort"></div>
 
-            <section id="education">
-                <h3>EDUCATION</h3>
-                <article>
-                    <dl>
-                        <dt><h4>G/Dorape S.S.</h4></dt>
-                        <dd>This is where i complete my education</dd>
+            <section id="EnSSection">
+                <section class="ensSect" id="educationSection">
+                    <section class="ensColumns">
+                        <h3 class="ensTitle">EDUCATION</h3>
+                        <section class="ensContentBox">
+                            <article class="endBox">
+                                <h4>2017</h4>
+                                <h3>O/L Exam</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci aut, corporis delectus eaque facere id minima, nobis nulla quasi qui reprehenderit rerum tenetur voluptates. Cupiditate laudantium modi recusandae?</p>
+                            </article>
 
-                        <dt><h4>IJSE - institute of java and SoftwareEngineering</h4></dt>
-                        <dd>Currently studying software engineering(GDSE Program) at this university</dd>
-                    </dl>
-                </article>
-            </section>
+                            <article class="endBox">
+                                <h4>2020</h4>
+                                <h3>A/L Exam</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci aut, corporis delectus eaque facere id minima, nobis nulla quasi qui reprehenderit rerum tenetur voluptates. Cupiditate laudantium modi recusandae?</p>
+                            </article>
 
-            <div id="skills" class="betweenSpaces"></div>
+                            <article class="endBox">
+                                <h4>2022-2024</h4>
+                                <h3>HND in Software Engineer</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci aut, corporis delectus eaque facere id minima, nobis nulla quasi qui reprehenderit rerum tenetur voluptates. Cupiditate laudantium modi recusandae?</p>
+                            </article>
+                        </section>
+                    </section>
+                </section>
+                <section class="ensSect" id="skillsSection">
+                    <section class="ensColumns">
+                        <h3 class="ensTitle">SKILLS</h3>
+                        <section class="ensContentBox">
+                            <article class="endBox">
+                                <h4>2017</h4>
+                                <h3>O/L Exam</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci aut, corporis delectus eaque facere id minima, nobis nulla quasi qui reprehenderit rerum tenetur voluptates. Cupiditate laudantium modi recusandae?</p>
+                            </article>
 
-            <section >
-                <h3>SKILLS</h3>
-                <img src="assets/img/java.svg" height="50" width="50">
-                <img src="assets/img/html5.svg" height="50" width="50">
-                <img src="assets/img/css3-alt.svg" height="50" width="50">
-                <img src="assets/img/python.svg" height="50" width="50">
-                <img src="assets/img/square-js.svg" height="50" width="50">
+                            <article class="endBox">
+                                <h4>2020</h4>
+                                <h3>A/L Exam</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci aut, corporis delectus eaque facere id minima, nobis nulla quasi qui reprehenderit rerum tenetur voluptates. Cupiditate laudantium modi recusandae?</p>
+                            </article>
+
+                            <article class="endBox">
+                                <h4>2022-2024</h4>
+                                <h3>HND in Software Engineer</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci aut, corporis delectus eaque facere id minima, nobis nulla quasi qui reprehenderit rerum tenetur voluptates. Cupiditate laudantium modi recusandae?</p>
+                            </article>
+                        </section>
+                    </section>
+                </section>
             </section>
 
         </section>
 
+        <div class="Spaces"></div>
+        <div id="" class="betweenSpaces"></div>
+
+        <div class="Spaces"></div>
         <div id="workExp" class="betweenSpaces"></div>
-
-        <section >
+        <section class="mainSection">
             <h3>WORK EXPERIENCE</h3>
+            <!--<div id="workBorder" class="boldLineLong"></div>
+            <div id="workCircle" class="boldLineShort"></div>-->
         </section>
 
-        <div id="myWorks" class="betweenSpaces"></div>
 
 
-        <section >
+
+        <section class="mainSection">
             <h3>MY WORKS</h3>
+            <div class="boldLineLong"></div>
+            <div class="boldLineShort"></div>
             <section>
                 <h4>ASSIGNMENTS</h4>
 
@@ -124,12 +175,12 @@
                 <h4>PROJECTS</h4>
 
                 <figure>
-                    <img src="assets/img/portfolio.png" height="250" width="250">
+                    <!--<img src="assets/img/portfolio.png" height="250" width="250">-->
                     <figcaption>MyPortfolio Website</figcaption>
                 </figure>
 
                 <figure>
-                    <img src="assets/img/carluxLogo.png" height="250" width="250">
+                    <!--<img src="assets/img/carluxLogo.png" height="250" width="250">-->
                     <figcaption>Stand alone Application for Dealership to manage cars</figcaption>
                 </figure>
             </section>
@@ -137,6 +188,7 @@
         </section>
 
     </main>
+    <div class="Spaces"></div>
     <div id="contact" class="betweenSpaces"></div>
 
     <footer >
@@ -165,14 +217,24 @@
             <article>
                 <form action="Data" method="post">
                     <p>Got a question or a proposal or just want to say hi ? Go ahead feel free</p>
-                    <input name="Name" type="text" size="50" placeholder="name" required>
-                    <input name="email" type="email" size="50" placeholder="email" required>
-                    <input name="description" type="text" size="50" placeholder="what you have to say" required>
+                    <label>
+                        <input name="Name" type="text" size="50" placeholder="name" required>
+                    </label>
+
+                    <label>
+                        <input name="email" type="email" size="50" placeholder="email" required>
+                    </label>
+
+                    <label>
+                        <input name="description" type="text" size="50" placeholder="what you have to say" required>
+                    </label>
+
                     <button type="submit">Send</button>
                 </form>
             </article>
         </section>
 
+        <div class="betweenSpaces"></div>
     </footer>
 
 </body>
