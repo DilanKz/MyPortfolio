@@ -14,13 +14,14 @@ header {
     padding: 10px 20px;
     position: sticky;
     top: 0;
-    z-index: 4;
+    z-index: 100;
+    font-family: 'Poppins', sans-serif;
 }
 
 
 nav {
     position: absolute;
-    right: 18vw;
+    right: 24vw;
 }
 
 menu a {
@@ -35,7 +36,7 @@ menu a:hover{
     color: aqua;
 }
 
-header img{
+header i{
     z-index: 2;
 }
 header > div {
@@ -44,9 +45,151 @@ header > div {
     right: 2vw;
 }
 
-header>div>img{
+header>div>i{
     margin-right: 5px;
 }
+header>div>i:hover{
+    color: aqua;
+    font-size: 20px;
+}
+/*Header button*/
+
+
+header > a{
+    margin: auto;
+    position: absolute;
+    top: 4vh;
+    right: 12vw;
+    bottom: 0;
+    color: aqua;
+    transform: translate(-50%,-50%);
+    padding: 12px 15px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
+    overflow: hidden;
+    z-index: 6;
+}
+
+header > a:before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    width: 50%;
+    background: rgba(255,255,255,0.05);
+}
+
+header > a span{
+    margin: 0;
+}
+
+header > a span:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(to right,#0C002B,aqua);
+    animation: animate1 2s linear infinite;
+}
+@keyframes animate1 {
+    0%{
+        transform: translateX(-100%);
+    }100%{
+         transform: translateX(100%);
+     }
+}
+header > a span:nth-child(2){
+    position: absolute;
+    top:0;
+    right:0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom,#0C002B,aqua);
+    animation: animate2 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes animate2 {
+    0%{
+        transform: translateY(-100%);
+    }100%{
+         transform: translateY(100%);
+     }
+}
+header > a span:nth-child(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(to left,#0C002B,aqua);
+    animation: animate3 2s linear infinite;
+}
+@keyframes animate3 {
+    0%{
+        transform: translateX(100%);
+    }100%{
+         transform: translateX(-100%);
+     }
+}
+header > a span:nth-child(4){
+    position: absolute;
+    top:0;
+    left:0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top,#0C002B,aqua);
+    animation: animate4 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes animate4 {
+    0%{
+        transform: translateY(100%);
+    }100%{
+         transform: translateY(-100%);
+     }
+}
+
+header > a span:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(to right,#0C002B,aqua);
+}
+header > a span:nth-child(2){
+    position: absolute;
+    top:0;
+    right:0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom,#0C002B,aqua);
+}
+header > a span:nth-child(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(to left,#0C002B,aqua);
+}
+header > a span:nth-child(4){
+    position: absolute;
+    top:0;
+    left:0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top,#0C002B,aqua);
+}
+
+/*Header button*/
+
 #space{
     width: 20vw;
     height: 28vh;
@@ -66,6 +209,7 @@ header>div>img{
     width: 50px;
     height: 50px;
 }
+/*Home page start*/
 
 main{
     position: relative;
@@ -114,136 +258,6 @@ main{
     margin-top: 20px;
 }
 
-#mainAbout a{
-    margin: 0;
-    position: absolute;
-    top: 28vh;
-    left: 5.1vw;
-    color: aqua;
-    transform: translate(-50%,-50%);
-    padding: 15px 20px;
-    font-size: 18px;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    box-shadow: 0 20px 50px rgba(0,0,0,.5);
-    overflow: hidden;
-}
-
-#mainAbout a:before{
-    content: '';
-    position: absolute;
-    top: 2px;
-    bottom: 2px;
-    left: 2px;
-    width: 50%;
-    background: rgba(255,255,255,0.05);
-}
-
-#mainAbout a span{
-    margin: 0;
-}
-
-#mainAbout a span:nth-child(1){
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 90%;
-    height: 2px;
-    background: linear-gradient(to right,#0C002B,aqua);
-    animation: animate1 2s linear infinite;
-}
-@keyframes animate1 {
-    0%{
-        transform: translateX(-100%);
-    }100%{
-         transform: translateX(100%);
-     }
-}
-#mainAbout a span:nth-child(2){
-    position: absolute;
-    top:0;
-    right:0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to bottom,#0C002B,aqua);
-    animation: animate2 2s linear infinite;
-    animation-delay: 1s;
-}
-@keyframes animate2 {
-    0%{
-        transform: translateY(-100%);
-    }100%{
-         transform: translateY(100%);
-     }
-}
-#mainAbout a span:nth-child(3){
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 90%;
-    height: 2px;
-    background: linear-gradient(to left,#0C002B,aqua);
-    animation: animate3 2s linear infinite;
-}
-@keyframes animate3 {
-    0%{
-        transform: translateX(100%);
-    }100%{
-         transform: translateX(-100%);
-     }
-}
-#mainAbout a span:nth-child(4){
-    position: absolute;
-    top:0;
-    left:0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to top,#0C002B,aqua);
-    animation: animate4 2s linear infinite;
-    animation-delay: 1s;
-}
-@keyframes animate4 {
-    0%{
-        transform: translateY(100%);
-    }100%{
-         transform: translateY(-100%);
-     }
-}
-
-#mainAbout a span:nth-child(1){
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 90%;
-    height: 2px;
-    background: linear-gradient(to right,#0C002B,aqua);
-}
-#mainAbout a span:nth-child(2){
-    position: absolute;
-    top:0;
-    right:0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to bottom,#0C002B,aqua);
-}
-#mainAbout a span:nth-child(3){
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 90%;
-    height: 2px;
-    background: linear-gradient(to left,#0C002B,aqua);
-}
-#mainAbout a span:nth-child(4){
-    position: absolute;
-    top:0;
-    left:0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to top,#0C002B,aqua);
-}
 .mainSection{
     position: relative;
     height: 80%;
@@ -268,11 +282,73 @@ main{
     border-radius: 100%;
 }
 
+.sideBtn{
+    position: absolute;
+    bottom: -10vh;
+    left: 3.5vw;
+    font-family: 'Source Sans Pro', sans-serif;
+    transform: translate(-50%,-50%);
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: aqua;
+}
+
+.sideBtn:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: aqua;
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: top left;
+    transform: scale(0);
+}
+
+.sideBtn:hover:before{
+    transition: transform 0.5s;
+    transform-origin: bottom right;
+    transform: scale(1);
+}
+
+.sideBtn:hover{
+    color: black;
+}
+
+.sideBtn:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: solid aqua 2px;
+    box-sizing: border-box;
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: bottom right;
+    transform: scale(1);
+}
+
+.sideBtn:hover:after{
+    transition: transform 0.5s;
+    transform-origin: top left;
+    transform: scale(0);
+}
+
+/*Home page End*/
+
+/*about me start*/
+
 #aboutMeSection > aside{
     position: absolute;
-    right: 10vw;
-    top: 5vh;
-    bottom: 0;
+    left: 6vw;
+    top: 20vh;
     margin: auto;
 }
 
@@ -286,27 +362,22 @@ main{
     top: 0;
     bottom: 0;
     right: 0;
-    width: 39vw;
-    height: 50vh;
     position: absolute;
     left: 40vw;
     margin: auto;
-    border: solid aqua 2px;
-    z-index: 2;
+    padding-top: 40px;
     font-size: 2.7vh;
 }
-#aboutMeBorder{
-    display: inline-block;
-    top: 24px;
-    bottom: 0;
-    right: 0;
-    width: 39vw;
-    height: 50vh;
+
+#aboutMeSection > article p{
+    left: 15%;
+    top: 35%;
     position: absolute;
-    left: 41vw;
-    margin: auto;
+    padding: 20px 20px;
     border: solid aqua 2px;
-    background-color: transparent;
+    z-index: 2;
+    width: 60%;
+    display: inline-block;
 }
 /*About me End*/
 
@@ -316,6 +387,7 @@ main{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    height: 170%;
 }
 
 .ensSect{
@@ -324,14 +396,11 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    margin-top: 10vh;
 }
 
 #EnSSection{
     margin: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 10px;
 }
 
 .ensTitle{
@@ -343,6 +412,7 @@ main{
 .ensColumns .ensContentBox{
     padding: 0 20px;
     border-left: solid 2px #ffeee8;
+    margin-left: 100px;
 }
 
 .ensColumns .ensContentBox .endBox{
@@ -351,12 +421,14 @@ main{
     border: 1px solid aqua;
     transition: all 0.4s;
     margin-bottom: 30px;
-    cursor: none;
+    cursor: pointer;
+    align-self: center;
+    width: 70%;
 }
 
 .ensColumns .ensContentBox .endBox:hover{
-    /*box-shadow: 0 3px 12px 0 aqua;
-    border: 1px solid transparent;*/
+    box-shadow: 0 5px 15px 0 aqua;
+    /*border: 1px solid transparent;*/
     background-color: aqua;
 }
 .ensColumns .ensContentBox .endBox h4{
@@ -382,7 +454,7 @@ main{
     background-color: transparent;
 }
 
-.ensColumns .ensContentBox .endBox::before{
+.ensColumns .ensContentBox .endBox:hover ::before{
     content: "";
     position: absolute;
     width: 16px;
@@ -394,6 +466,18 @@ main{
     border: 2px solid aqua;
 }
 
+.ensColumns .ensContentBox .endBox::before{
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    right: calc(100% + 26px);
+    top: -1px;
+    background-color: white;
+    border: 2px solid white;
+}
+
 .ensColumns .ensContentBox .endBox h4{
     background-color: transparent;
     font-size: 19px;
@@ -401,5 +485,59 @@ main{
     font-family: 'Source Sans Pro', sans-serif;
     color: aqua;
 }
+/*Skills*/
+.skills {
+    flex: 0 0 40%;
+    max-width: 70%;
+    margin-left: 9vw;
+    margin-top: -2vh;
+}
 
+.skills .skill-item {
+    max-width: 80%;
+    /*border: solid 2px aqua;
+    padding: 0 10px 30px 20px;*/
+}
+
+.skills .skill-item h5 {
+    line-height: 40px;
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+    text-transform: capitalize;
+    display: inline-block;
+}
+
+.skills .skill-item h5 i{
+    color: aqua;
+    padding-left: 20px;
+}
+
+.skills .skill-item .progress {
+    margin: 0;
+    background-color: grey;
+    height: 7px;
+    border-radius: 4px;
+    width: 100%;
+    position: relative;
+}
+.skills .skill-item .progress .progress-in {
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 4px;
+    background-color: aqua;
+}
+
+.skills .skill-item .skill-percent {
+    position: absolute;
+    right: 0;
+    color: white;
+    top: -40px;
+    font-weight: 400;
+}
+/*skill end*/
 /*Education and skills end*/
+

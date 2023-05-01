@@ -20,6 +20,7 @@
 
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/fontAwesome/css/all.min.css">
 </head>
 <body>
     <header>
@@ -28,15 +29,22 @@
             <menu >
                 <a href="#aboutMe" >About Me</a>
                 <a href="#myEducation" >Education And Skills</a>
-                <a href="#workExp" >Work Experience</a>
+                <a href="#workExp" >Experience</a>
                 <a href="#myWorks" >My Works</a>
                 <a href="#contact" >Contacts</a>
                 <!-- <li><a href="#doc path" download="CV">RESUME</a></li> -->
             </menu>
         </nav>
+        <a href="">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Resume
+        </a>
         <div>
-            <img src="assets/img/github.svg" alt="">
-            <img src="assets/img/telegram.svg" alt="">
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-telegram"></i>
         </div>
     </header>
 
@@ -53,13 +61,7 @@
             <p>I'm a </p>
             <p class="lastDetail"> Full-Stack Developer</p>
             <br>
-            <a href="">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Resume
-            </a>
+            <a href="#contact" class="sideBtn">Hire me</a>
         </section>
 
         <div id="firstSpace" class="Spaces"></div>
@@ -73,9 +75,8 @@
             <article>
                     <p>My name is Tharindu Dilan and I am 21 years old software engineer from Sri lanka. Currently,<br><br> I am studying software Engineering at IJSE.
                     As a software engineering student I am passionate about creating new software solutions. And I enjoy implementing new ideas to my projects.<br><br> Till now i have learned and mastered programming languages such as python, java, c++ also web developing and Database management
-                    Through out this portfolio I would like to show u some of my works and my skills, and I welcome you to give me feedback or inquiries if you may have</p>
+                    Throughout this portfolio I would like to show u some of my works and my skills, and I welcome you to give me feedback or inquiries if you may have
             </article>
-            <div id="aboutMeBorder"></div>
             
             <aside>
                 <!--<img src="assets/img/myImg.jpeg" alt="">-->
@@ -115,29 +116,49 @@
                         </section>
                     </section>
                 </section>
-                <section class="ensSect" id="skillsSection">
-                    <section class="ensColumns">
-                        <h3 class="ensTitle">SKILLS</h3>
-                        <section class="ensContentBox">
-                            <article class="endBox">
-                                <h4>2017</h4>
-                                <h3>O/L Exam</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci aut, corporis delectus eaque facere id minima, nobis nulla quasi qui reprehenderit rerum tenetur voluptates. Cupiditate laudantium modi recusandae?</p>
-                            </article>
+                <section>
+                    <h3 class="ensTitle">SKILLS</h3>
 
-                            <article class="endBox">
-                                <h4>2020</h4>
-                                <h3>A/L Exam</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci aut, corporis delectus eaque facere id minima, nobis nulla quasi qui reprehenderit rerum tenetur voluptates. Cupiditate laudantium modi recusandae?</p>
-                            </article>
-
-                            <article class="endBox">
-                                <h4>2022-2024</h4>
-                                <h3>HND in Software Engineer</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci aut, corporis delectus eaque facere id minima, nobis nulla quasi qui reprehenderit rerum tenetur voluptates. Cupiditate laudantium modi recusandae?</p>
-                            </article>
-                        </section>
-                    </section>
+                    <div class="skills ">
+                        <div class="row">
+                            <div class="skill-item">
+                                <h5>Java <i class="fa-brands fa-java"></i></h5>
+                                <div class="progress">
+                                    <div class="progress-in" style="width: 91%;"></div>
+                                    <div class="skill-percent">91%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <h5>MySQL <i class="fa-solid fa-database"></i></h5>
+                                <div class="progress">
+                                    <div class="progress-in" style="width: 80%;"></div>
+                                    <div class="skill-percent">80%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <h5>CSS <i class="fa-brands fa-css3-alt"></i></h5>
+                                <div class="progress">
+                                    <div class="progress-in" style="width: 80%;"></div>
+                                    <div class="skill-percent">80%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <h5>HTML <i class="fa-brands fa-html5"></i></h5>
+                                <div class="progress">
+                                    <div class="progress-in" style="width: 85%;"></div>
+                                    <div class="skill-percent">85%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <h5>Java Script <i class="fa-brands fa-js"></i></h5>
+                                <div class="progress">
+                                    <div class="progress-in" style="width: 70%;"></div>
+                                    <div class="skill-percent">70%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                 </section>
             </section>
 
@@ -149,14 +170,15 @@
         <div class="Spaces"></div>
         <div id="workExp" class="betweenSpaces"></div>
         <section class="mainSection">
-            <h3>WORK EXPERIENCE</h3>
-            <!--<div id="workBorder" class="boldLineLong"></div>
-            <div id="workCircle" class="boldLineShort"></div>-->
+            <h3>EXPERIENCE</h3>
+            <div id="workBorder" class="boldLineLong"></div>
+            <div id="workCircle" class="boldLineShort"></div>
         </section>
 
 
 
-
+        <div class="Spaces"></div>
+        <div id="myWorks" class="betweenSpaces"></div>
         <section class="mainSection">
             <h3>MY WORKS</h3>
             <div class="boldLineLong"></div>
