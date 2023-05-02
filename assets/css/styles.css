@@ -1,39 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
 *{
-    background-color: #03001C;
     color: #ffeee8;
     margin-left: 1vw;
 }
 
-header {
+a{background-color:transparent;}
+span{background-color:transparent;}
+h3{background-color:transparent;}
+div{background-color:transparent;}
+section{background-color:transparent;}
 
-    background-color: #03001C;
+header {
+    margin: 0;
+    /*width: 100vw;*/
+    background-color: #1F1D36;
     display: flex;
     align-items: center;
     padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 100;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 
 nav {
     position: absolute;
-    right: 24vw;
+    right: 10vw;
 }
 
 menu a {
     color: #ffeee8;
     margin-left:20px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 menu a:hover{
     /*font-size: 15px;*/
-    color: aqua;
+    color: #E5B8F4;
 }
 
 header i{
@@ -49,144 +55,11 @@ header>div>i{
     margin-right: 5px;
 }
 header>div>i:hover{
-    color: aqua;
+    color: #C147E9;
     font-size: 20px;
 }
 /*Header button*/
 
-
-header > a{
-    margin: auto;
-    position: absolute;
-    top: 4vh;
-    right: 12vw;
-    bottom: 0;
-    color: aqua;
-    transform: translate(-50%,-50%);
-    padding: 12px 15px;
-    font-size: 14px;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    box-shadow: 0 20px 50px rgba(0,0,0,.5);
-    overflow: hidden;
-    z-index: 6;
-}
-
-header > a:before{
-    content: '';
-    position: absolute;
-    top: 2px;
-    bottom: 2px;
-    left: 2px;
-    width: 50%;
-    background: rgba(255,255,255,0.05);
-}
-
-header > a span{
-    margin: 0;
-}
-
-header > a span:nth-child(1){
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 90%;
-    height: 2px;
-    background: linear-gradient(to right,#0C002B,aqua);
-    animation: animate1 2s linear infinite;
-}
-@keyframes animate1 {
-    0%{
-        transform: translateX(-100%);
-    }100%{
-         transform: translateX(100%);
-     }
-}
-header > a span:nth-child(2){
-    position: absolute;
-    top:0;
-    right:0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to bottom,#0C002B,aqua);
-    animation: animate2 2s linear infinite;
-    animation-delay: 1s;
-}
-@keyframes animate2 {
-    0%{
-        transform: translateY(-100%);
-    }100%{
-         transform: translateY(100%);
-     }
-}
-header > a span:nth-child(3){
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 90%;
-    height: 2px;
-    background: linear-gradient(to left,#0C002B,aqua);
-    animation: animate3 2s linear infinite;
-}
-@keyframes animate3 {
-    0%{
-        transform: translateX(100%);
-    }100%{
-         transform: translateX(-100%);
-     }
-}
-header > a span:nth-child(4){
-    position: absolute;
-    top:0;
-    left:0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to top,#0C002B,aqua);
-    animation: animate4 2s linear infinite;
-    animation-delay: 1s;
-}
-@keyframes animate4 {
-    0%{
-        transform: translateY(100%);
-    }100%{
-         transform: translateY(-100%);
-     }
-}
-
-header > a span:nth-child(1){
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 90%;
-    height: 2px;
-    background: linear-gradient(to right,#0C002B,aqua);
-}
-header > a span:nth-child(2){
-    position: absolute;
-    top:0;
-    right:0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to bottom,#0C002B,aqua);
-}
-header > a span:nth-child(3){
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 90%;
-    height: 2px;
-    background: linear-gradient(to left,#0C002B,aqua);
-}
-header > a span:nth-child(4){
-    position: absolute;
-    top:0;
-    left:0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to top,#0C002B,aqua);
-}
 
 /*Header button*/
 
@@ -202,14 +75,20 @@ header > a span:nth-child(4){
 
 #firstSpace{
     width: 20vw;
-    height: 33vh;
+    height: 40vh;
 }
 
 .betweenSpaces{
     width: 50px;
     height: 50px;
 }
+
+body{
+    background-color: #1F1D36;
+}
+
 /*Home page start*/
+
 
 main{
     position: relative;
@@ -225,6 +104,7 @@ main{
     margin-bottom: 4px;
     font-family: 'Poppins', sans-serif;
     display: inline;
+    text-transform: capitalize;
 }
 
 #mainAbout  h3:nth-child(1){
@@ -234,7 +114,7 @@ main{
 
 #mainAbout  h3:nth-child(2) {
     display: inline;
-    color: aqua;
+    color: #C147E9;
     margin-bottom: 20px;
 }
 
@@ -243,7 +123,12 @@ main{
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 8vh;
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bolder;
+}
+
+.mainSection{
+    border-top: 8px solid #E5B8F4;
 }
 
 #mainAbout > p{
@@ -254,20 +139,19 @@ main{
 }
 
 .lastDetail{
-    color: aqua;
+    color: #E5B8F4;
     margin-top: 20px;
 }
 
 .mainSection{
     position: relative;
-    height: 80%;
 }
 
 .boldLineLong{
     position: absolute;
     width: 8vw;
     height: 1.3vh;
-    background-color: aqua;
+    background-color: #C147E9;
     top: 1.4vh;
     left: 13vw;
 }
@@ -276,7 +160,7 @@ main{
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: aqua;
+    background-color: #C147E9;
     top: 1.4vh;
     left: 22vw;
     border-radius: 100%;
@@ -287,12 +171,13 @@ main{
     bottom: -10vh;
     left: 3.5vw;
     font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
     transform: translate(-50%,-50%);
     padding: 10px 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-decoration: none;
-    color: aqua;
+    color: #C147E9;
 }
 
 .sideBtn:before{
@@ -302,7 +187,7 @@ main{
     left: 0;
     width: 100%;
     height: 100%;
-    background: aqua;
+    background: #C147E9;
     z-index: -1;
     transition: transform 0.5s;
     transform-origin: top left;
@@ -316,7 +201,7 @@ main{
 }
 
 .sideBtn:hover{
-    color: black;
+    color: #1F1D36;
 }
 
 .sideBtn:after{
@@ -327,7 +212,7 @@ main{
     width: 100%;
     height: 100%;
     background: transparent;
-    border: solid aqua 2px;
+    border: solid #C147E9 2px;
     box-sizing: border-box;
     z-index: -1;
     transition: transform 0.5s;
@@ -344,6 +229,10 @@ main{
 /*Home page End*/
 
 /*about me start*/
+
+#aboutMeSection{
+    height: 100%;
+}
 
 #aboutMeSection > aside{
     position: absolute;
@@ -374,20 +263,199 @@ main{
     top: 35%;
     position: absolute;
     padding: 20px 20px;
-    border: solid aqua 2px;
+    border: solid #C147E9 2px;
+    font-size: smaller;
     z-index: 2;
     width: 60%;
     display: inline-block;
 }
+
+
+/*button*/
+
+.mainSection > a{
+    margin: auto;
+    position: absolute;
+    right: 36.5vw;
+    bottom: 14vh;
+    color: #C147E9;
+    transform: translate(-50%,-50%);
+    padding: 12px 15px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
+    overflow: hidden;
+    z-index: 6;
+}
+
+.mainSection > a:before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    width: 50%;
+    background: rgba(255,255,255,0.05);
+}
+
+.mainSection > a span{
+    margin: 0;
+}
+
+.mainSection > a span:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(to right,#1F1D36,aqua);
+    animation: animate1 2s linear infinite;
+}
+@keyframes animate1 {
+    0%{
+        transform: translateX(-100%);
+    }100%{
+         transform: translateX(100%);
+     }
+}
+.mainSection > a span:nth-child(2){
+    position: absolute;
+    top:0;
+    right:0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom,#1F1D36,aqua);
+    animation: animate2 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes animate2 {
+    0%{
+        transform: translateY(-100%);
+    }100%{
+         transform: translateY(100%);
+     }
+}
+.mainSection > a span:nth-child(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(to left,#1F1D36,#C147E9);
+    animation: animate3 2s linear infinite;
+}
+@keyframes animate3 {
+    0%{
+        transform: translateX(100%);
+    }100%{
+         transform: translateX(-100%);
+     }
+}
+.mainSection > a span:nth-child(4){
+    position: absolute;
+    top:0;
+    left:0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top,#1F1D36,#C147E9);
+    animation: animate4 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes animate4 {
+    0%{
+        transform: translateY(100%);
+    }100%{
+         transform: translateY(-100%);
+     }
+}
+
+.mainSection > a span:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(to right,#1F1D36,#C147E9);
+}
+.mainSection > a span:nth-child(2){
+    position: absolute;
+    top:0;
+    right:0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom,#1F1D36,#C147E9);
+}
+.mainSection > a span:nth-child(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(to left,#1F1D36,#C147E9);
+}
+.mainSection > a span:nth-child(4){
+    position: absolute;
+    top:0;
+    left:0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top,#1F1D36,#C147E9);
+}
+
+/*button*/
+.mainSection > h3{
+    margin: 0;
+    color: transparent;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-size: 6vw;
+    position: absolute;
+}
+
+.mainSection > h3:nth-child(1){
+    -webkit-text-stroke:2px #C147E9;
+}
+
+.mainSection > h3:nth-child(2){
+    color: #C147E9;
+    animation: textAnimate 4s ease-in-out infinite;
+}
+@keyframes textAnimate {
+    0%,100%{
+        clip-path: polygon(0 46%, 7% 55%, 13% 65%, 21% 64%, 29% 55%, 37% 49%, 46% 51%, 54% 58%, 60% 68%, 69% 73%, 75% 65%, 81% 53%, 87% 45%, 95% 47%, 100% 58%, 100% 100%, 0 100%);
+    }
+    50%{
+        clip-path: polygon(0 71%, 7% 55%, 13% 49%, 21% 55%, 29% 66%, 38% 73%, 46% 63%, 51% 54%, 59% 46%, 64% 46%, 71% 49%, 79% 56%, 89% 55%, 94% 60%, 100% 71%, 100% 100%, 0 100%);
+    }
+}
+.mainSection > h1{
+    user-select: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: transparent;
+    -webkit-text-stroke:2px #C147E9;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 15vh;
+    letter-spacing: 13px;
+    rotate: 90deg;
+}
+
 /*About me End*/
 
 
 /*Education and sills Start*/
+
 #EnSMainSection{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 170%;
+    height: 195%;
 }
 
 .ensSect{
@@ -400,13 +468,14 @@ main{
 }
 
 #EnSSection{
-    margin: 0;
+    margin-top: 24vh;
 }
 
 .ensTitle{
     font-family: 'Source Sans Pro', sans-serif;
-    color: aqua;
+    color: #C147E9;
     padding: 0 0 20px 30px;
+    margin-top: 30px;
 }
 
 .ensColumns .ensContentBox{
@@ -416,9 +485,10 @@ main{
 }
 
 .ensColumns .ensContentBox .endBox{
+    border-radius: 5vh;
     position: relative;
     padding: 20px;
-    border: 1px solid aqua;
+    border: 1px solid #C147E9;
     transition: all 0.4s;
     margin-bottom: 30px;
     cursor: pointer;
@@ -427,9 +497,9 @@ main{
 }
 
 .ensColumns .ensContentBox .endBox:hover{
-    box-shadow: 0 5px 15px 0 aqua;
+    /*box-shadow: 0 5px 15px 0 #C147E9;*/
     /*border: 1px solid transparent;*/
-    background-color: aqua;
+    background-color: #E5B8F4;
 }
 .ensColumns .ensContentBox .endBox h4{
     background-color: transparent;
@@ -442,15 +512,15 @@ main{
 }
 
 .ensColumns .ensContentBox .endBox:hover h3{
-    color: black;
+    color: #1F1D36;
 }
 
 .ensColumns .ensContentBox .endBox:hover h4{
-    color: black;
+    color: #1F1D36;
     background-color: transparent;
 }
 .ensColumns .ensContentBox .endBox:hover p{
-    color: black;
+    color: #1F1D36;
     background-color: transparent;
 }
 
@@ -462,8 +532,8 @@ main{
     border-radius: 50%;
     right: calc(100% + 26px);
     top: -1px;
-    background-color: aqua;
-    border: 2px solid aqua;
+    background-color: #C147E9;
+    border: 2px solid #C147E9;
 }
 
 .ensColumns .ensContentBox .endBox::before{
@@ -483,7 +553,7 @@ main{
     font-size: 19px;
     padding: 10px 0 6px;
     font-family: 'Source Sans Pro', sans-serif;
-    color: aqua;
+    color: #C147E9;
 }
 /*Skills*/
 .skills {
@@ -503,13 +573,13 @@ main{
     line-height: 40px;
     font-weight: 600;
     font-size: 18px;
-    color: white;
+    color: #E5B8F4;
     text-transform: capitalize;
     display: inline-block;
 }
 
 .skills .skill-item h5 i{
-    color: aqua;
+    color: #C147E9;
     padding-left: 20px;
 }
 
@@ -528,7 +598,7 @@ main{
     top: 0;
     height: 100%;
     border-radius: 4px;
-    background-color: aqua;
+    background-color: #E5B8F4;
 }
 
 .skills .skill-item .skill-percent {
@@ -541,3 +611,142 @@ main{
 /*skill end*/
 /*Education and skills end*/
 
+/*Service start*/
+
+
+
+/*Service end*/
+
+/*Projects Start*/
+#myWorksSection{
+    /*margin-left: 0;*/
+}
+
+.AnPSection {
+    margin-top: 21vh;
+}
+
+#projects{
+    /*margin-left: 0;*/
+}
+.projects{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+section.projects {
+    left: -5vw;
+    position: relative;
+}
+.pdjBody{
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.container{
+    margin-left: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+}
+
+.container .pjCard{
+    margin-left: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 350px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 35px 70px rgba(0,0,0,0.15);
+    transition: 0.5s;
+}
+
+.container .pjCard:hover{
+    height: 400px;
+}
+
+.container .pjCard .pjImg{
+    margin-left: 0;
+    position: absolute;
+    top: 20px;
+    width: 300px;
+    height: 220px;
+    background-color: black;
+    border-radius: 12px;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.container .pjCard:hover .pjImg{
+    top: -100px;
+    scale: 0.75;
+    box-shadow:0 35px 70px rgba(0,0,0,0.15);
+}
+
+.container .pjCard .pjImg img{
+    margin-left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .pjCard .content{
+    margin-left: 0;
+    position: absolute;
+    top: 250px;
+    width: 100%;
+    height: 42px;
+    overflow: hidden;
+    text-align: center;
+    padding: 0 30px;
+    transition: 0.5s;
+}
+
+.container .pjCard:hover .content{
+    margin-left: 0;
+    top: 130px;
+    height: 250px;
+}
+
+.container .pjCard .content h2{
+    margin-left: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: purple;
+}
+
+.container .pjCard .content p{
+    margin-left: 0;
+    color: black;
+    font-size: 1em;
+}
+
+.container .pjCard .content a{
+    margin-left: 0;
+    color: black;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.container .pjCard .content a i{
+    margin-left: 0;
+    color: black;
+}
+
+/*Projects Ends*/
