@@ -17,6 +17,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/normalize.css">
@@ -65,40 +68,43 @@
         <section id="aboutMeSection" class="mainSection">
             <h3>ABOUT ME</h3>
             <h3>ABOUT ME</h3>
+            <h1>ABOUT</h1>
 <!--            <div class="boldLineLong"></div>-->
 <!--            <div class="boldLineShort"></div>-->
 
-            <article>
+            <section id="aboutMenBtn">
+                <article>
                     <p>My name is Tharindu Dilan and I am 21 years old software engineer from Sri lanka. Currently,<br><br> I am studying software Engineering at IJSE.
-                    As a software engineering student I am passionate about creating new software solutions. And I enjoy implementing new ideas to my projects.<br><br> Till now i have learned and mastered programming languages such as python, java, c++ also web developing and Database management
-                    Throughout this portfolio I would like to show u some of my works and my skills, and I welcome you to give me feedback or inquiries if you may have
-            </article>
-            <a href="">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Resume
-            </a>
+                        As a software engineering student I am passionate about creating new software solutions. And I enjoy implementing new ideas to my projects.<br><br> Till now i have learned and mastered programming languages such as python, java, c++ also web developing and Database management
+                        Throughout this portfolio I would like to show u some of my works and my skills, and I welcome you to give me feedback or inquiries if you may have
+                </article>
+                <a href="">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Resume
+                </a>
+            </section>
             <aside>
-                <!--<img src="assets/img/myImg.jpeg" alt="">-->
+<!--                <img src="assets/img/myImg.jpeg" alt="">-->
             </aside>
         </section>
 
-        <div class="Spaces"></div>
+<!--        <div class="Spaces"></div>-->
         <div id="myEducation" class="betweenSpaces"></div>
 
         <section class="mainSection" id="EnSMainSection">
             <h3>EDUCATION & SKILLS</h3>
             <h3>EDUCATION & SKILLS</h3>
-
+            <h1>Education & Skills</h1>
 <!--            <div class="boldLineLong"></div>-->
 <!--            <div class="boldLineShort"></div>-->
 
             <section id="EnSSection">
+                <h3 class="ensTitle">EDUCATION</h3>
                 <section class="ensSect" id="educationSection">
                     <section class="ensColumns">
-                        <h3 class="ensTitle">EDUCATION</h3>
                         <section class="ensContentBox">
                             <article class="endBox">
                                 <h4>2017</h4>
@@ -120,69 +126,102 @@
                         </section>
                     </section>
                 </section>
-                <section>
-                    <h3 class="ensTitle">SKILLS</h3>
 
-                    <div class="skills ">
-                        <div class="row">
-                            <div class="skill-item">
-                                <h5>Java <i class="fa-brands fa-java"></i></h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 91%;"></div>
-                                    <div class="skill-percent">91%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <h5>MySQL <i class="fa-solid fa-database"></i></h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 80%;"></div>
-                                    <div class="skill-percent">80%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <h5>CSS <i class="fa-brands fa-css3-alt"></i></h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 80%;"></div>
-                                    <div class="skill-percent">80%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <h5>HTML <i class="fa-brands fa-html5"></i></h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 85%;"></div>
-                                    <div class="skill-percent">85%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <h5>Java Script <i class="fa-brands fa-js"></i></h5>
-                                <div class="progress">
-                                    <div class="progress-in" style="width: 70%;"></div>
-                                    <div class="skill-percent">70%</div>
-                                </div>
+
+                <h3 class="ensTitle">SKILLS</h3>
+                <Section class="skillContainer">
+                    <div class="skillCard">
+                        <div class="skillpercent" style="--clr:#0463fc; --num:85">
+                            <div class="dot"></div>
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="skillNumber">
+                                <h2>85 <span>%</span></h2>
+                                <p>Html</p>
                             </div>
                         </div>
                     </div>
+
+                    <div class="skillCard">
+                        <div class="skillpercent" style="--clr:#04fcc2; --num:87">
+                            <div class="dot"></div>
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="skillNumber">
+                                <h2>87 <span>%</span></h2>
+                                <p>CSS</p>
+                            </div>
+                        </div>
                     </div>
-                </section>
+
+                    <div class="skillCard">
+                        <div class="skillpercent" style="--clr:#8c04fc; --num:76">
+                            <div class="dot"></div>
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="skillNumber">
+                                <h2>76 <span>%</span></h2>
+                                <p>Python</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skillCard">
+                        <div class="skillpercent" style="--clr:#fc4e04; --num:90">
+                            <div class="dot"></div>
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="skillNumber">
+                                <h2>90 <span>%</span></h2>
+                                <p>Java</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skillCard">
+                        <div class="skillpercent" style="--clr:#cafc04; --num:85">
+                            <div class="dot"></div>
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="skillNumber">
+                                <h2>85 <span>%</span></h2>
+                                <p>Html</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </Section>
+
             </section>
 
         </section>
 
-        <div id="" class="betweenSpaces"></div>
+        <div id="serviceSpace" class="betweenSpaces"></div>
 
-        <div class="Spaces"></div>
+<!--        <div class="Spaces"></div>-->
         <div id="service" class="betweenSpaces"></div>
 
         <section class="mainSection" id="serviceSection">
             <h3>Service</h3>
             <h3>Service</h3>
+            <h1>Service</h1>
 <!--            <div id="workBorder" class="boldLineLong"></div>-->
 <!--            <div id="workCircle" class="boldLineShort"></div>-->
         </section>
 
 
 
-        <div class="Spaces"></div>
+<!--        <div class="Spaces"></div>-->
         <div id="myWorks" class="betweenSpaces"></div>
         <section id="myWorksSection" class="mainSection">
             <h3>MY WORKS</h3>
@@ -281,7 +320,7 @@
         </section>
 
     </main>
-    <div class="Spaces"></div>
+<!--    <div class="Spaces"></div>-->
     <div id="contact" class="betweenSpaces"></div>
 
     <footer >
