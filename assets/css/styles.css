@@ -2,6 +2,44 @@
     color: #ffeee8;
 }
 
+/*Preloader*/
+
+.preLoader{
+    width: 100%;
+    height: 100vh;
+    background-color: #222831;
+    position: fixed;
+    z-index: 200;
+}
+.preLoader svg{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    fill: none;
+    stroke: #FFD369;
+    stroke-width: 20px;
+    animation: textstroke 4s infinite alternate;
+}
+
+@keyframes textstroke{
+    0%{
+        stroke-dasharray: 0 50%;
+        stroke-dashoffset: 20%;
+    }
+    100%{
+        stroke-dasharray: 50% 0;
+        stroke-dashoffset: -20%;
+    }
+}
+
+/*Preloader*/
+
+
 a{background-color:transparent;}
 span{background-color:transparent;}
 h3{background-color:transparent;}
@@ -42,7 +80,7 @@ menu a:hover{
 }
 
 header i{
-    z-index: 2;
+    z-index: 20;
 }
 header > div {
     display: inline-block;
@@ -50,12 +88,15 @@ header > div {
     right: 2vw;
 }
 
-header>div>i{
+header>div>a>i{
     margin-right: 5px;
 }
-header>div>i:hover{
+header>div>a:hover{
     color: #FFD369;
     font-size: 20px;
+}
+header>div>a:hover i{
+    color: #FFD369;
 }
 /*Header button*/
 
@@ -98,6 +139,16 @@ body::-webkit-scrollbar{
 
 main{
     position: relative;
+}
+
+canvas {
+    z-index: 6;
+    border: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
 }
 
 #mainAbout{
@@ -173,6 +224,7 @@ main{
 }
 
 .sideBtn{
+    z-index: 7;
     position: absolute;
     bottom: -10vh;
     left: 3.5vw;
@@ -1016,7 +1068,7 @@ main{
     left: -6%;
     margin: auto;
     text-transform: uppercase;
-    font-size: 25vw;
+    font-size: 27vw;
     letter-spacing: 13px;
     /*rotate: 90deg;*/
 }
@@ -1024,7 +1076,7 @@ main{
 .contactBody{
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: start;
     flex-wrap: wrap;
     margin-top: 19vh;
 }
@@ -1035,7 +1087,8 @@ main{
 }
 
 #contactForm{
-    text-align: center
+    text-align: center;
+    margin-bottom: 5vw;
 }
 
 #contactForm form{
@@ -1044,8 +1097,9 @@ main{
 }
 #contactForm h4{
     color: white;
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.3vw;
+    font-family:'Source Sans Pro', sans-serif;
+    font-weight: 500;
+    font-size: 1.5vw;
     margin-bottom: 2vh;
 }
 
@@ -1078,14 +1132,126 @@ main{
     border-radius: 0.2vw;
 }
 
+#contactForm form input:focus,#contactForm form textarea:focus{
+    background: rgba(34, 40, 49, 0.38);
+}
+
 #contactForm form textarea{
     resize: none;
     height: 18vh;
 }
-
 #contactSubmitBtn{
-    width: 80px;
+    outline: none;
+    border: none;
+}
+
+#contactSubmitBtn ,#contactSubmitBtn span{
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 100px;
     height: 30px;
+}
+
+#contactSubmitBtn span{
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #393E46;
+    background: #FFD369;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+#contactSubmitBtn span:nth-child(2){
+    user-select: none;
+    color: #FFD369;
+    background-color: #393E46;
+    overflow: hidden;
+    transition: 0.5s;
+    clip-path: polygon(75% 0, 100% 0, 100% 100%, 35% 100%);
+}
+
+#contactSubmitBtn span:nth-child(2):hover{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+#contactSubmitBtn span:nth-child(1):hover ~ span:nth-child(2){
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+#contactDetails{
+    position: relative;
+    /*top: -10vh;*/
+}
+
+#contactDetails h4{
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 500;
+    font-size: 1.5vw;
+    margin-bottom: 2vh;
+}
+
+#contactDetails h4 span{
+    color: #FFD369;
+}
+
+#contactDetails address ul span{
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+#contactDetails address ul,#contactDetails ul{
+    list-style-type: none;
+}
+
+#contactDetails ul{
+    padding-top: 5vh;
+}
+
+#contactDetails ul li a{
+    /*padding-right: 1vw;*/
+    margin-right: 1vw;
+}
+
+#contactDetails ul li a i:hover{
+    font-size: 25px;
+}
+
+#contactDetails ul li a i{
+    color: #FFD369;
+    font-size: 20px;
+}
+
+#contactDetails address ul li{
+    padding-bottom: 4vh;
+}
+
+#contactDetails address ul li span i{
+    padding-right: 1vw;
+}
+
+#contactDetails address ul li>a{
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 100;
+    border-bottom: none;
+}
+
+#contactDetails address ul li a:hover ~ ul li span i{
+    color: #FFD369;
 }
 
 /*Contact Section ends*/
@@ -1095,4 +1261,13 @@ footer{
     width: 100%;
     height: 40px;
     background-color: #222831;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer span{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 100;
+    font-size: 10px;
 }
