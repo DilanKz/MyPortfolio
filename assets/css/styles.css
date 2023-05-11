@@ -943,7 +943,7 @@ canvas {
 
 }
 
-.container{
+.projectsContainer{
     margin-left: 0;
     position: relative;
     display: flex;
@@ -954,7 +954,7 @@ canvas {
     padding: 100px 50px;
 }
 
-.container .pjCard{
+.projectsContainer .pjCard{
     margin-left: 0;
     position: relative;
     display: flex;
@@ -968,11 +968,11 @@ canvas {
     transition: 0.5s;
 }
 
-.container .pjCard:hover{
+.projectsContainer .pjCard:hover{
     height: 400px;
 }
 
-.container .pjCard .pjImg{
+.projectsContainer .pjCard .pjImg{
     margin-left: 0;
     position: absolute;
     top: 20px;
@@ -984,13 +984,13 @@ canvas {
     overflow: hidden;
 }
 
-.container .pjCard:hover .pjImg{
+.projectsContainer .pjCard:hover .pjImg{
     top: -100px;
     scale: 0.75;
     box-shadow:0 35px 70px rgba(0,0,0,0.15);
 }
 
-.container .pjCard .pjImg img{
+.projectsContainer .pjCard .pjImg img{
     margin-left: 0;
     position: absolute;
     top: 0;
@@ -1000,7 +1000,7 @@ canvas {
     object-fit: cover;
 }
 
-.container .pjCard .content{
+.projectsContainer .pjCard .content{
     margin-left: 0;
     position: absolute;
     top: 250px;
@@ -1012,33 +1012,33 @@ canvas {
     transition: 0.5s;
 }
 
-.container .pjCard:hover .content{
+.projectsContainer .pjCard:hover .content{
     margin-left: 0;
     top: 130px;
     height: 250px;
 }
 
-.container .pjCard .content h2{
+.projectsContainer .pjCard .content h2{
     margin-left: 0;
     font-size: 1.5em;
     font-weight: bold;
     color: #FFD369;
 }
 
-.container .pjCard .content p{
+.projectsContainer .pjCard .content p{
     margin-left: 0;
     color: black;
     font-size: 1em;
 }
 
-.container .pjCard .content a{
+.projectsContainer .pjCard .content a{
     margin-left: 0;
     color: black;
     font-size: 1em;
     text-decoration: none;
 }
 
-.container .pjCard .content a i{
+.projectsContainer .pjCard .content a i{
     margin-left: 0;
     color: black;
 }
