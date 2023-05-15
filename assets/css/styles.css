@@ -286,7 +286,8 @@ canvas {
 /*about me start*/
 
 #aboutMeSection{
-    height: 100%;
+    height: 90%;
+    max-height: 100%;
     background-color: #393E46;
 }
 
@@ -339,8 +340,11 @@ canvas {
 /*button*/
 
 #aboutMenBtn > a{
-    margin: auto;
-    position: absolute;
+    width: 75px;
+    height: 15px;
+    position: relative;
+    /* margin: auto; */
+    /* position: absolute; */
     left: 0;
     bottom: 0;
     color: #FFD369;
@@ -353,6 +357,7 @@ canvas {
     box-shadow: 0 20px 50px rgba(0,0,0,.5);
     overflow: hidden;
     z-index: 6;
+    display: block;
 }
 
 #aboutMenBtn > a:before{
@@ -500,6 +505,10 @@ canvas {
     -webkit-text-stroke: 1px white;
 }
 
+.mainSection{
+    overflow: hidden;
+}
+
 #aboutMeSection > h1{
     user-select: none;
     /*font-family: 'Source Sans Pro', sans-serif;*/
@@ -509,7 +518,7 @@ canvas {
     padding: 0;
     display: flex;
     position: absolute;
-    bottom: -14vh;
+    bottom: -12vh;
     /*top: 37%;*/
     left: -6%;
     margin: auto;
