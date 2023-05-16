@@ -1277,3 +1277,257 @@ footer span{
     font-weight: 100;
     font-size: 10px;
 }
+
+/**/
+/*@media screen and (min-width: 770px) {*/
+/*    nav {*/
+/*        display: block;*/
+/*        position: absolute;*/
+/*        right: 10vw;*/
+/*    }*/
+
+/*    menu a {*/
+/*        font-size: 11px;*/
+/*    }*/
+
+/*    header > div {*/
+/*        display: inline-block;*/
+/*        position: absolute;*/
+/*        right: 2vw;*/
+/*    }*/
+
+/*    header>div>a>i{*/
+/*        margin-right: 5px;*/
+/*    }*/
+
+/*    header>div>a:hover{*/
+/*        color: #FFD369;*/
+/*        font-size: 20px;*/
+/*    }*/
+
+/*    header>div>a:hover i{*/
+/*        color: #FFD369;*/
+/*    }*/
+/*}*/
+
+/*@media screen and (min-width: 768px) and (max-width: 1024px) {*/
+/*    menu a {*/
+/*        font-size: 14px;*/
+/*        margin-left: 15px;*/
+/*    }*/
+
+/*    nav {*/
+/*        display: block;*/
+/*        position: absolute;*/
+/*        right: 5vw;*/
+/*    }*/
+
+/*    header > div {*/
+/*        display: inline-block;*/
+/*        position: absolute;*/
+/*        right: 2vw;*/
+/*    }*/
+
+/*    header>div>a>i{*/
+/*        margin-right: 5px;*/
+/*    }*/
+
+/*    header>div>a:hover{*/
+/*        color: #FFD369;*/
+/*        font-size: 20px;*/
+/*    }*/
+
+/*    header>div>a:hover i{*/
+/*        color: #FFD369;*/
+/*    }*/
+/*}*/
+
+/*@media screen and (min-width: 1025px) {*/
+/*    menu a {*/
+/*        font-size: 11px;*/
+/*    }*/
+
+/*    nav {*/
+/*        display: block;*/
+/*        position: absolute;*/
+/*        right: 10vw;*/
+/*    }*/
+
+/*    header > div {*/
+/*        display: inline-block;*/
+/*        position: absolute;*/
+/*        right: 2vw;*/
+/*    }*/
+
+/*    header>div>a>i{*/
+/*        margin-right: 5px;*/
+/*    }*/
+
+/*    header>div>a:hover{*/
+/*        color: #FFD369;*/
+/*        font-size: 20px;*/
+/*    }*/
+
+/*    header>div>a:hover i{*/
+/*        color: #FFD369;*/
+/*    }*/
+/*}*/
+
+@media screen and (min-width: 600px) and (max-width: 1090px){
+
+    .sideBtn{
+        left: 7.5vw;
+    }
+
+    #aboutMeSection > h1 {
+        bottom: -5vh;
+    }
+
+    #aboutMenBtn {
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    #aboutMenBtn > article p{
+        width: 85%
+    }
+
+    #EnSSection {
+        margin-top: 8vh;
+    }
+
+    .ensSect{
+        margin-top: -5vh;
+    }
+
+    .skillContainer .skillCard {
+        transform: scale(0.75);
+    }
+
+    #serviceSection > h1{
+        bottom: -7%;
+    }
+
+    #serviceSection{
+        min-height: 85vh;
+    }
+
+    .serviceCards{
+        margin-top: 11vh;
+        margin-left: 6vw;
+
+        /*position: absolute;*/
+        /*left: 0;*/
+        /*right: 0;*/
+        /*bottom: 0;*/
+        /*top: 0;*/
+        /*margin: auto;*/
+    }
+
+    .serviceItem {
+        width: 40vw;
+    }
+
+    .projectsContainer{
+        gap: 0;
+        padding: 0;
+    }
+
+    .projectsContainer .pjCard {
+        transform: scale(0.75);
+    }
+
+    #contactSection > h1 {
+        bottom: -9%;
+    }
+
+    #contactDetails h4,#contactForm h4{
+        font-size: 1.5rem;
+    }
+
+    #contactForm form p {
+        font-size: .95rem;
+    }
+}
+
+/**/
+@media screen and (max-width: 600px) {
+
+    #space {
+        width: 20vw;
+        height: 13vh;
+    }
+
+    #firstSpace {
+        width: 20vw;
+        height: 20vh;
+    }
+    #aboutMeSection {
+        min-height: 50%;
+        height: 0;
+    }
+
+    .mainSection > h3 {
+        font-size: 8vw;
+    }
+
+    .betweenSpaces {
+        height: 60px;
+    }
+
+    #mainAbout {
+        margin-left: -80px;
+        transform: scale(0.5);
+    }
+
+    #aboutMeSection > h1 {
+        font-size: 29vw;
+        bottom: -3vh;
+    }
+
+    .sideBtn{
+        left: 14.5vw;
+    }
+
+    #aboutMenBtn {
+        margin: auto;
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        /*right: -60px;*/
+        /*top: 17%;*/
+        bottom: 0;
+        top: 0;
+        right: 1vh;
+
+    }
+
+    #aboutMenBtn > article p {
+        font-size: 8px;
+        width: auto;
+        padding: 5px 5px;
+    }
+
+
+    #EnSSection {
+        margin-top: 10vh;
+    }
+
+    .ensSect {
+        transform: scale(0.5);
+        min-height: 50vh;
+        max-height: 60vh;
+        position: relative;
+        right: 8vw;
+    }
+
+    .ensColumns .ensContentBox .endBox {
+        width: 120vw;
+    }
+}
+/**/
