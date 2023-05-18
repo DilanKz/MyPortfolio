@@ -1276,3 +1276,317 @@ footer span{
     font-weight: 100;
     font-size: 10px;
 }
+
+/**/
+
+@media screen and (max-width: 600px) {
+
+    #space {
+        width: 20vw;
+        height: 13vh;
+    }
+
+    #firstSpace {
+        width: 20vw;
+        height: 20vh;
+    }
+    #aboutMeSection {
+        min-height: 50%;
+        height: 0;
+    }
+
+    .mainSection > h3 {
+        font-size: 8vw;
+    }
+
+    .betweenSpaces {
+        height: 60px;
+    }
+
+    #mainAbout {
+        margin-left: -80px;
+        transform: scale(0.5);
+    }
+
+    #aboutMeSection > h1 {
+        font-size: 29vw;
+        bottom: -3vh;
+    }
+
+    .sideBtn{
+        left: 14.5vw;
+    }
+
+    #aboutMenBtn {
+        margin: auto;
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        /*right: -60px;*/
+        /*top: 17%;*/
+        bottom: 0;
+        top: 0;
+        right: 1vh;
+
+    }
+
+    #aboutMenBtn > article p {
+        font-size: 8px;
+        width: auto;
+        padding: 5px 5px;
+    }
+
+    #aboutMenBtn > a {
+        transform: scale(0.5);
+        left: -6.5vw;
+        bottom: -1vh;
+    }
+
+    #EnSSection {
+        margin-top: 10vh;
+    }
+
+    .ensSect {
+        transform: scale(0.5);
+        min-height: 50vh;
+        max-height: 60vh;
+        position: relative;
+        right: 8vw;
+    }
+
+    .ensColumns .ensContentBox .endBox {
+        width: 120vw;
+    }
+
+
+    #serviceSection{
+        min-height: 55vh;
+    }
+
+    #serviceSection h1{
+        font-size: 22vw;
+        left: -4%;
+        bottom: -2.5vh;
+    }
+
+    .serviceCards{
+        margin-top: 9vh;
+        margin-left: 0;
+    }
+
+    .serviceItem{
+        width: 44vw;
+    }
+
+    .serviceBox div {
+        width: 40px;
+        height: 40px;
+    }
+
+    .serviceBox div i{
+        font-size: 25px;
+    }
+
+    .serviceBox h3 {
+        font-size: 15px;
+        margin-top: 7vh;
+        margin-bottom: 0;
+    }
+
+    .serviceBox p {
+        font-size: 7px;
+    }
+
+    .projectsContainer{
+        gap: 55px 10px;
+        padding: 10px 5px;
+    }
+
+    .projectsContainer .pjCard{
+        width: 175px;
+        height: 150px;
+        border-radius: 10px;
+    }
+
+    .projectsContainer .pjCard:hover{
+        height: 230px;
+    }
+
+    .projectsContainer .pjCard .pjImg{
+        top: 10px;
+        width: 150px;
+        height: 110px;
+    }
+
+    .projectsContainer .pjCard:hover .pjImg{
+        top: -75px;
+    }
+    .projectsContainer .pjCard .content{
+        top: 115px;
+    }
+    .projectsContainer .pjCard:hover .content{
+        top: 50px;
+        height: 150px;
+    }
+    .projectsContainer .pjCard .content h2{
+        font-size: 15px;
+    }
+    .projectsContainer .pjCard .content p{
+        font-size: 8px;
+    }
+    .projectsContainer .pjCard .content a{
+        font-size: 8px;
+    }
+
+    .contactBody{
+        margin-top: 10vh;
+    }
+
+    #contactDetails{
+        width: 100%;
+    }
+
+    #contactForm {
+        width: 80%;
+    }
+
+    #contactDetails h4 , #contactForm h4 {
+        font-size: 3.5vw;
+    }
+
+    #contactDetails ul {
+        font-size: 10px;
+        padding-top: 5vh;
+        padding-left: 10px;
+    }
+
+    #contactDetails address,#contactDetails>ul{
+        margin-left: 6vw;
+    }
+
+    #contactDetails ul li a {
+        margin-right: 16vw;
+    }
+
+    #contactForm form p {
+        font-size: 2.1vw;
+        padding-bottom: 1vh;
+    }
+
+    #contactForm form input{
+        height: 3vh;
+    }
+
+    #contactForm form textarea {
+        height: 10vh;
+    }
+
+    #contactForm form input, #contactForm form textarea {
+        font-size: 2.5vw;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    button#contactSubmitBtn {
+        background-color: transparent;
+    }
+    #contactSubmitBtn, #contactSubmitBtn span {
+        transform: scale(0.75)
+    }
+
+    #contactSection > h1 {
+        font-size: 20vw;
+        bottom: -3%;
+    }
+}
+
+
+/**/
+
+
+@media screen and (min-width: 600px) and (max-width: 1090px){
+
+    #mainAbout > span {
+        font-size: 9vh;
+    }
+
+    .sideBtn{
+        left: 7.5vw;
+    }
+
+    #aboutMeSection > h1 {
+        bottom: -5vh;
+    }
+
+    #aboutMenBtn {
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    #aboutMenBtn > article p{
+        width: 85%
+    }
+
+    #EnSSection {
+        margin-top: 8vh;
+    }
+
+    .ensSect{
+        margin-top: -5vh;
+    }
+
+    .skillContainer .skillCard {
+        transform: scale(0.75);
+    }
+
+    #serviceSection > h1{
+        bottom: -5%;
+    }
+
+    #serviceSection{
+        min-height: 85vh;
+    }
+
+    .serviceCards{
+        margin-top: 11vh;
+        margin-left: 6vw;
+
+        /*position: absolute;*/
+        /*left: 0;*/
+        /*right: 0;*/
+        /*bottom: 0;*/
+        /*top: 0;*/
+        /*margin: auto;*/
+    }
+
+    .serviceItem {
+        width: 40vw;
+    }
+
+    .projectsContainer{
+        gap: 0;
+        padding: 0;
+    }
+
+    .projectsContainer .pjCard {
+        transform: scale(0.75);
+    }
+
+    #contactSection > h1 {
+        bottom: -6%;
+    }
+
+    #contactDetails h4,#contactForm h4{
+        font-size: 1.5rem;
+    }
+
+    #contactForm form p {
+        font-size: .95rem;
+    }
+}
+
+/**/
