@@ -59,6 +59,10 @@ header {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+.menuBars{
+    visibility: hidden;
+}
+
 
 nav {
     position: absolute;
@@ -642,7 +646,7 @@ canvas {
     color: #1F1D36;
 }
 /*Skills*/
-.skillContainer{
+/*.skillContainer{
     margin: 0;
     padding: 0;
     position: relative;
@@ -770,7 +774,7 @@ canvas {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* color:white; */
+    !* color:white; *!
     color: var(--clr);
     font-weight: 700;
     font-size: 2.5em;
@@ -779,7 +783,7 @@ canvas {
 .skillNumber h2 span{
     margin: 0;
     font-weight: 300;
-    /* color: aliceblue; */
+    !* color: aliceblue; *!
     color: var(--clr);
 }
 
@@ -798,7 +802,7 @@ canvas {
     letter-spacing: 1px;
     line-height: 2px;
     color: var(--clr);
-}
+}*/
 /*skill end*/
 
 /*Education and skills end*/
@@ -1049,6 +1053,27 @@ canvas {
 .projectsContainer .pjCard .content a i{
     margin-left: 0;
     color: black;
+}
+
+.btnAssignments{
+    text-decoration: none;
+    background: #333960;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #FFD369;
+    transition: 0.5s;
+    padding: 5px 10px 10px 5px;
+    width: max-content;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /*z-index: 21;*/
+}
+
+.btnAssignments:hover{
+    background: #FFD369;
+    color: #333960;
 }
 
 /*Projects Ends*/
@@ -1586,6 +1611,25 @@ footer span{
 
     #contactForm form p {
         font-size: .95rem;
+    }
+}
+
+@media screen and (max-width: 1090px){
+
+    .menuBars{
+        visibility: visible;
+    }
+
+    .menuBars i{
+        padding: 2px;
+    }
+
+    #nav{
+        visibility: hidden;
+    }
+
+    #navIcons{
+        visibility: hidden;
     }
 }
 
