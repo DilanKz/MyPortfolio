@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: #222831;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cssContainer{
+    margin: 2vh;
+    padding: 2vh;
+    border: 2px solid #FFD369;
+}
+
+.cssContainer h4{
+    font-family: sans-serif;
+    color: #FFD369;
+    font-weight: 400;
+}
+
+.css{
+    display: flex;
+    height: 30vh;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+main a{
+    margin: 2vh;
+    text-decoration: none;
+    color: #FFD369;
+    padding: 2vh;
+    height: max-content;
+    width: max-content;
+    background: #333960;
+    transition: 0.5s;
+    font-family: sans-serif;
+}
+
+
+
+main a:hover{
+    background: #FFD369;
+    color: #222831;
+}
+
+
