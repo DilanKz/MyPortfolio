@@ -1614,7 +1614,7 @@ footer span{
     }
 }
 
-@media screen and (max-width: 1090px){
+@media screen and (max-width: 900px){
 
     .menuBars{
         visibility: visible;
