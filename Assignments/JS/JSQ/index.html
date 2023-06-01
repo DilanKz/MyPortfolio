@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSQ</title>
+
+    <style>
+
+        body{
+            width: 100%;
+            height: 100%;
+            background-color: #647b86;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        span{
+            display: inline-block;
+            margin-top: 5vh;
+            font-size: 20px;
+            font-weight: 600;
+            color: #e1e1e1;
+        }
+
+        #mainSect{
+            width: 1000px;
+            height: 300px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        #mainSect div{
+            height: 80px;
+            margin-left: 2vh;
+            flex-grow: 1;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        #mainSect div:last-child{
+            align-self: end;
+        }
+
+        #mainSect div:first-child{
+            align-self: start;
+        }
+
+    </style>
+
+</head>
+<body>
+<main>
+    <span>Java Script Queue</span>
+    <section id="mainSect">
+        <div class="divs"></div>
+        <div class="divs"></div>
+        <div class="divs"></div>
+        <div class="divs"></div>
+        <div class="divs"></div>
+        <div class="divs"></div>
+    </section>
+</main>
+</body>
+
+<script>
+    let divs=document.getElementsByClassName("divs");
+
+    let colors=["red","blue","yellow","green","pink","orange"];
+
+    console.log(colors);
+    console.log(divs)
+
+    for (let i = 0; i < 6; i++) {
+        divs[i].style.backgroundColor=colors[i];
+    }
+    
+    setInterval(function (){
+        for (let i = 0; i < 6; i++) {
+            divs[i].style.backgroundColor=colors[i];
+        }
+
+        let lastValue=colors.pop();
+        colors.unshift(lastValue);
+    },500);
+
+</script>
+</html>
