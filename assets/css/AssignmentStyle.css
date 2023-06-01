@@ -43,6 +43,7 @@ main a{
     background: #333960;
     transition: 0.5s;
     font-family: sans-serif;
+    border-radius: 20px;
 }
 
 
