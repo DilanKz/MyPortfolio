@@ -58,7 +58,7 @@ btnItemAdd.click(function (){
     clearItemFields();
 
     incrementItemId(lastITr.find('td:first').text());
-    $('#Iid').val(cusId);
+    $('#Iid').val(itemId);
 
     btnItemUpdate.prop('disabled',false);
     btnItemDelete.prop('disabled',false);
@@ -98,7 +98,7 @@ btnItemUpdate.click(function (){
     clearItemFields();
 
     incrementItemId(lastITr.find('td:first').text());
-    $('#Iid').val(cusId);
+    $('#Iid').val(itemId);
 
     //updating the selected customer from the list
     itemList[itemIndex].id=iID;
@@ -123,7 +123,7 @@ btnItemDelete.click(function (){
     clearItemFields();
 
     incrementItemId(lastITr.find('td:first').text());
-    $('#Iid').val(cusId);
+    $('#Iid').val(itemId);
 
     btnItemUpdate.prop('disabled',true);
     btnItemDelete.prop('disabled',true);
