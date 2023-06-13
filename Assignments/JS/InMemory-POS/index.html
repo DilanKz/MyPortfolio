@@ -29,16 +29,16 @@
       <div class="collapse navbar-collapse ms-4" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="../../CSS-Frameworks/Pos/index.html" id="btnCustomer" >Customer</a>
+            <a class="nav-link text-white" aria-current="page" href="#customers" id="btnCustomer" >Customer</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="../../CSS-Frameworks/Pos/Items.html" id="btnItem">Items</a>
+            <a class="nav-link text-white" href="#item" id="btnItem">Items</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="../../CSS-Frameworks/Pos/Orders.html" id="btnOrder">Orders</a>
+            <a class="nav-link text-white" href="#orders" id="btnOrder">Orders</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="../../CSS-Frameworks/Pos/PlaceOrder.html" id="btnPlaceOrder">Place Orders</a>
+            <a class="nav-link text-white" href="#placeOrder" id="btnPlaceOrder">Place Orders</a>
           </li>
 
         </ul>
@@ -58,7 +58,7 @@
       <h5 class="text-dark text-center m-lg-3 pt-5" >Add Customer</h5>
       <form>
         <div class="form-floating mb-3 mt-2">
-          <input type="text" class="form-control" id="cid" placeholder="Id">
+          <input type="text" class="form-control" id="cid" placeholder="Id" disabled>
           <label for="cid">Id</label>
         </div>
 
@@ -134,9 +134,11 @@
         </div>
       </form>
 
-      <div class="col-8 ms-5">
-        <button type="button" class="btn btn-success me-1 mt-2 mb-3">Save</button>
-        <button type="button" class="btn btn-warning me-1 mt-2 mb-3 ms-4">Update</button>
+      <div class="col-10 ms-2">
+        <button id="btnItemAdd" type="button" class="btn btn-success me-1 mt-2 mb-3">Save</button>
+        <button id="btnItemUpdate" type="button" class="btn btn-info me-1 mt-2 mb-3 ms-1">Update</button>
+        <button id="btnItemDelete" type="button" class="btn btn-danger me-1 mt-2 mb-3 ms-1">Delete</button>
+        <button id="btnItemClear" type="button" class="btn btn-danger me-1 mt-2 mb-3 ms-1">Clear</button>
       </div>
 
     </section>
@@ -150,60 +152,10 @@
           <th style="background-color: #da9aef" scope="col">Description</th>
           <th style="background-color: #da9aef" scope="col">Unit Price</th>
           <th style="background-color: #da9aef" scope="col">Quantity</th>
-          <th style="background-color: #da9aef" scope="col">Action</th>
         </tr>
         </thead>
-        <tbody>
-        <tr>
-          <th scope="row">I001</th>
-          <td>Milk</td>
-          <td>2000.00</td>
-          <td>10</td>
-          <td>
-            <button type="button" class="btn btn-warning">Edit</button>
-            <button type="button" class="btn btn-danger">Delete</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">I002</th>
-          <td>Rice</td>
-          <td>220.00</td>
-          <td>50</td>
-          <td>
-            <button type="button" class="btn btn-warning">Edit</button>
-            <button type="button" class="btn btn-danger">Delete</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">I003</th>
-          <td>Milk</td>
-          <td>2000.00</td>
-          <td>10</td>
-          <td>
-            <button type="button" class="btn btn-warning">Edit</button>
-            <button type="button" class="btn btn-danger">Delete</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">I004</th>
-          <td>Milk</td>
-          <td>2000.00</td>
-          <td>10</td>
-          <td>
-            <button type="button" class="btn btn-warning">Edit</button>
-            <button type="button" class="btn btn-danger">Delete</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">I005</th>
-          <td>Milk</td>
-          <td>2000.00</td>
-          <td>10</td>
-          <td>
-            <button type="button" class="btn btn-warning">Edit</button>
-            <button type="button" class="btn btn-danger">Delete</button>
-          </td>
-        </tr>
+        <tbody id="tblItemBody">
+
         </tbody>
       </table>
     </section>
@@ -228,84 +180,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <th scope="col">O001</th>
-      <th scope="col">2023-05-17</th>
-      <th scope="col">C001</th>
-      <th scope="col">I001</th>
-      <th scope="col">2</th>
-      <th scope="col">100.00</th>
-      <th scope="col">1900.00</th>
-      <th scope="col">
-        <button type="button" class="btn btn-warning">Edit</button>
-        <button type="button" class="btn btn-danger">Delete</button>
-      </th>
-    </tr>
-    <tr>
-      <th scope="col">O002</th>
-      <th scope="col">2023-05-17</th>
-      <th scope="col">C001</th>
-      <th scope="col">I001</th>
-      <th scope="col">2</th>
-      <th scope="col">100.00</th>
-      <th scope="col">1900.00</th>
-      <th scope="col">
-        <button type="button" class="btn btn-warning">Edit</button>
-        <button type="button" class="btn btn-danger">Delete</button>
-      </th>
-    </tr>
-    <tr>
-      <th scope="col">O003</th>
-      <th scope="col">2023-05-17</th>
-      <th scope="col">C001</th>
-      <th scope="col">I001</th>
-      <th scope="col">2</th>
-      <th scope="col">100.00</th>
-      <th scope="col">1900.00</th>
-      <th scope="col">
-        <button type="button" class="btn btn-warning">Edit</button>
-        <button type="button" class="btn btn-danger">Delete</button>
-      </th>
-    </tr>
-    <tr>
-      <th scope="col">O004</th>
-      <th scope="col">2023-05-17</th>
-      <th scope="col">C001</th>
-      <th scope="col">I001</th>
-      <th scope="col">2</th>
-      <th scope="col">100.00</th>
-      <th scope="col">1900.00</th>
-      <th scope="col">
-        <button type="button" class="btn btn-warning">Edit</button>
-        <button type="button" class="btn btn-danger">Delete</button>
-      </th>
-    </tr>
-    <tr>
-      <th scope="col">O005</th>
-      <th scope="col">2023-05-17</th>
-      <th scope="col">C001</th>
-      <th scope="col">I001</th>
-      <th scope="col">2</th>
-      <th scope="col">100.00</th>
-      <th scope="col">1900.00</th>
-      <th scope="col">
-        <button type="button" class="btn btn-warning">Edit</button>
-        <button type="button" class="btn btn-danger">Delete</button>
-      </th>
-    </tr>
-    <tr>
-      <th scope="col">O006</th>
-      <th scope="col">2023-05-17</th>
-      <th scope="col">C001</th>
-      <th scope="col">I001</th>
-      <th scope="col">2</th>
-      <th scope="col">100.00</th>
-      <th scope="col">1900.00</th>
-      <th scope="col">
-        <button type="button" class="btn btn-warning">Edit</button>
-        <button type="button" class="btn btn-danger">Delete</button>
-      </th>
-    </tr>
+
     </tbody>
   </table>
   </section>
@@ -330,24 +205,24 @@
         <div class="col">
           <div class="input-group">
             <span class="input-group-text">Date</span>
-            <input class="form-control" type="text" placeholder="2023-05-17" aria-label="Disabled input example" disabled>
+            <input id="dtf" class="form-control" type="text"  aria-label="Disabled input example" disabled>
           </div>
         </div>
         <div class="col">
           <div class="input-group">
             <span class="input-group-text">CustomerID</span>
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Select ID</option>
-              <option value="1">C001</option>
+            <select id="customerIds" class="form-select" aria-label="Default select example">
+<!--              <option selected>Select ID</option>-->
+              <!--<option value="1">C001</option>
               <option value="2">C002</option>
-              <option value="3">C003</option>
+              <option value="3">C003</option>-->
             </select>
           </div>
         </div>
         <div class="col">
           <div class="input-group">
             <span class="input-group-text">Customer Name</span>
-            <input class="form-control" type="text" placeholder="" aria-label="Disabled input example" disabled>
+            <input id="poCustomerName" class="form-control" type="text" placeholder="" aria-label="Disabled input example" disabled>
           </div>
         </div>
 
@@ -357,11 +232,11 @@
         <div class="col">
           <div class="input-group">
             <span class="input-group-text">Item ID</span>
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Select ID</option>
-              <option value="1">I001</option>
+            <select id="itemIds" class="form-select" aria-label="Default select example">
+<!--              <option selected>Select ID</option>-->
+              <!--<option value="1">I001</option>
               <option value="2">I002</option>
-              <option value="3">I003</option>
+              <option value="3">I003</option>-->
             </select>
           </div>
         </div>
@@ -369,28 +244,28 @@
         <div class="col">
           <div class="input-group">
             <span class="input-group-text">Description</span>
-            <input class="form-control" type="text" placeholder="" aria-label="Disabled input example" disabled>
+            <input id="poItemDesc" class="form-control" type="text" placeholder="" aria-label="Disabled input example" disabled>
           </div>
         </div>
 
         <div class="col">
           <div class="input-group">
             <span class="input-group-text">Qty On Hand</span>
-            <input class="form-control" type="text" placeholder="" aria-label="Disabled input example" disabled>
+            <input id="poItemQtyOnHand" class="form-control" type="text" placeholder="" aria-label="Disabled input example" disabled>
           </div>
         </div>
 
         <div class="col">
           <div class="input-group">
             <span class="input-group-text">Unit Price</span>
-            <input class="form-control" type="text" placeholder="" aria-label="Disabled input example" disabled>
+            <input id="poItemUP" class="form-control" type="text" placeholder="" aria-label="Disabled input example" disabled>
           </div>
         </div>
 
         <div class="col">
           <div class="input-group">
             <span class="input-group-text">Quantity</span>
-            <input class="form-control" type="text" placeholder="" aria-label="Disabled input example">
+            <input id="poItemQty" class="form-control" type="text" placeholder="" aria-label="Disabled input example">
           </div>
         </div>
 
@@ -423,33 +298,13 @@
         <tbody>
 
         <tr>
-          <th scope="col">I001</th>
-          <th scope="col">Milk</th>
-          <th scope="col">2</th>
-          <th scope="col">2000.00</th>
-          <th scope="col">4000.00</th>
-          <th scope="col">
-            <button type="button" class="btn btn-warning">Edit</button>
-            <button type="button" class="btn btn-danger">Delete</button>
-          </th>
+
         </tr>
-        <tr>
-          <th scope="col">I002</th>
-          <th scope="col">Rice</th>
-          <th scope="col">10</th>
-          <th scope="col">2200.00</th>
-          <th scope="col">2200.00</th>
-          <th scope="col">
-            <button type="button" class="btn btn-warning">Edit</button>
-            <button type="button" class="btn btn-danger">Delete</button>
-          </th>
-        </tr>
-
-
-
         </tbody>
       </table>
     </div>
+
+
     <form action="">
       <div class="row mt-3">
 
@@ -490,6 +345,7 @@
 <script src="controllers/customerController.js"></script>
 <script src="controllers/itemsController.js"></script>
 <script src="controllers/poController.js"></script>
+<script src="controllers/orderController.js"></script>
 
 </body>
 </html>

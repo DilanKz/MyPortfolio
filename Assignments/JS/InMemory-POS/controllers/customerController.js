@@ -1,6 +1,23 @@
 let selectedCustomerRow;
 let customerList=[];
 let customerIndex;
+let cusId;
+let lastTr;
+
+
+function incrementCusId(currentID) {
+    if (currentID==='no'){
+        cusId='C001';
+    }else {
+        let number =parseInt(currentID.slice(1), 10);
+        number++;
+        cusId = "C" + number.toString().padStart(3, "0");
+        console.log(cusId);
+    }
+}
+
+incrementCusId('no');
+$('#cid').val(cusId);
 
 function clearCustomerFields() {
     $('#cid').val("");
@@ -29,17 +46,32 @@ btnAdd.click(function (){
     let cusAddress = $('#Address').val();
     let cusContact = $('#contact').val();
 
-    let tr=$('<tr> <td>'+ cusID +'</td> <td>'+ cusName +'</td> <td>'+ cusAddress +'</td> <td>'+ cusContact +'</td> </tr>');
-    $('#tblCustomers').append(tr);
+    lastTr=$('<tr> <td>'+ cusID +'</td> <td>'+ cusName +'</td> <td>'+ cusAddress +'</td> <td>'+ cusContact +'</td> </tr>');
+    $('#tblCustomers').append(lastTr);
 
     //adding the customer to the list
-    customerList.push({id: cusID ,name: cusName, address: cusAddress,contact: cusContact});
+
+    let customer={
+        id: cusID ,
+        name: cusName,
+        address: cusAddress,
+        contact: cusContact
+    }
+
+    customerList.push(customer);
+
+    customerList[0].name;
+
     console.log(customerList);
+    loadCustomerOptionIds();
 
     clearCustomerFields();
 
     btnUpdate.prop('disabled',false);
     btnDelete.prop('disabled',false);
+
+    incrementCusId(lastTr.find('td:first').text());
+    $('#cid').val(cusId);
 
 });
 
@@ -88,6 +120,10 @@ btnUpdate.click(function (){
     btnUpdate.prop('disabled',true);
     btnDelete.prop('disabled',true);
     btnAdd.prop('disabled',false);
+
+    //getting the first td of the last tr and
+    incrementCusId(lastTr.find('td:first').text());
+    $('#cid').val(cusId);
 });
 
 btnDelete.click(function (){
@@ -102,6 +138,9 @@ btnDelete.click(function (){
     btnUpdate.prop('disabled',true);
     btnDelete.prop('disabled',true);
     btnAdd.prop('disabled',false);
+
+    incrementCusId(lastTr.find('td:first').text());
+    $('#cid').val(cusId);
 
 });
 
