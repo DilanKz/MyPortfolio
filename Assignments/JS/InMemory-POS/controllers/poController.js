@@ -6,7 +6,7 @@ function loadCustomerOptionIds(){
     selectCusIds.append($('<option selected>Select_ID</option>'));
 
     for (let index in customerList) {
-        let option = $('<option value="'+index+1+'"> '+customerList[index].id+' </option>');
+        let option = $('<option value="'+index+'"> '+customerList[index].id+' </option>');
         selectCusIds.append(option)
     }
 }
@@ -17,7 +17,7 @@ function loadItemOptionIds(){
     selectItemIds.append($('<option selected>Select_ID</option>'));
 
     for (let index in itemList) {
-        let option = $('<option value="'+index+1+'"> '+itemList[index].id+' </option>');
+        let option = $('<option value="'+index+'"> '+itemList[index].id+' </option>');
         selectItemIds.append(option)
     }
 }
@@ -39,7 +39,8 @@ selectCusIds.click(function (){
     if (text!=='Select_ID'){
         console.log(text+" "+index);
 
-        let customerListElement = customerList[Number(index)-1];
+        let customerListElement = customerList[Number(index)];
+        console.log(Number(index));
         $('#poCustomerName').val(customerListElement.name);
     }
 });
@@ -50,7 +51,7 @@ selectItemIds.click(function (){
     if (text!=='Select_ID'){
         console.log(text+" "+index);
 
-        let itemListElement = itemList[Number(index)-1];
+        let itemListElement = itemList[Number(index)];
 
         $('#poItemDesc').val(itemListElement.desc);
         $('#poItemQtyOnHand').val(itemListElement.qty);

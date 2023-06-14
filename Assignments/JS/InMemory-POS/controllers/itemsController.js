@@ -12,7 +12,6 @@ function incrementItemId(currentID) {
         let number =parseInt(currentID.slice(1), 10);
         number++;
         itemId = "I" + number.toString().padStart(3, "0");
-        itemId.log(itemId);
     }
 }
 
