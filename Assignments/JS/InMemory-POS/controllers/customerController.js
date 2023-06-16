@@ -7,11 +7,11 @@ let lastTr;
 
 function incrementCusId(currentID) {
     if (currentID==='no'){
-        cusId='C001';
+        cusId='C00-001';
     }else {
-        let number =parseInt(currentID.slice(1), 10);
+        let number =parseInt(currentID.slice(4), 10);
         number++;
-        cusId = "C" + number.toString().padStart(3, "0");
+        cusId = "C00-" + number.toString().padStart(3, "0");
         console.log(cusId);
     }
 }
@@ -22,10 +22,14 @@ $('#cid').val(cusId);
 function clearCustomerFields() {
     $('#cid').val("");
     $('#Name').val("");
+    $('#Name').focus();
     $('#Address').val("");
     $('#contact').val("");
 
 }
+
+
+
 
 let btnAdd = $("#btnAdd");
 let tblCustomers = $("#tblCustomers");
@@ -38,9 +42,7 @@ btnUpdate.prop('disabled',true);
 btnDelete.prop('disabled',true);
 
 
-//Button Add function
-btnAdd.click(function (){
-
+function addCustomer(){
     let cusID = $('#cid').val();
     let cusName = $('#Name').val();
     let cusAddress = $('#Address').val();
@@ -72,6 +74,14 @@ btnAdd.click(function (){
 
     incrementCusId(lastTr.find('td:first').text());
     $('#cid').val(cusId);
+}
+
+//Button Add function
+btnAdd.click(function (){
+
+    if (validateFields()){
+        addCustomer();
+    }
 
 });
 
@@ -95,55 +105,136 @@ tblCustomers.dblclick(function (event){
 //Button delete function
 btnUpdate.click(function (){
 
-    let cusID = $('#cid').val();
-    let cusName = $('#Name').val();
-    let cusAddress = $('#Address').val();
-    let cusContact = $('#contact').val();
+    if (confirm("Are you sure you want to Update this Customer?")) {
+        let cusID = $('#cid').val();
+        let cusName = $('#Name').val();
+        let cusAddress = $('#Address').val();
+        let cusContact = $('#contact').val();
 
-    selectedCustomerRow.cells[0].textContent=cusID;
-    selectedCustomerRow.cells[1].textContent=cusName;
-    selectedCustomerRow.cells[2].textContent=cusAddress;
-    selectedCustomerRow.cells[3].textContent=cusContact;
+        selectedCustomerRow.cells[0].textContent=cusID;
+        selectedCustomerRow.cells[1].textContent=cusName;
+        selectedCustomerRow.cells[2].textContent=cusAddress;
+        selectedCustomerRow.cells[3].textContent=cusContact;
 
-    clearCustomerFields();
+        clearCustomerFields();
 
 
 
-    //updating the selected customer from the list
-    customerList[customerIndex].id=cusID;
-    customerList[customerIndex].name=cusName;
-    customerList[customerIndex].address=cusAddress;
-    customerList[customerIndex].contact=cusContact;
+        //updating the selected customer from the list
+        customerList[customerIndex].id=cusID;
+        customerList[customerIndex].name=cusName;
+        customerList[customerIndex].address=cusAddress;
+        customerList[customerIndex].contact=cusContact;
 
-    console.log(customerList);
+        console.log(customerList);
 
-    btnUpdate.prop('disabled',true);
-    btnDelete.prop('disabled',true);
-    btnAdd.prop('disabled',false);
+        btnUpdate.prop('disabled',true);
+        btnDelete.prop('disabled',true);
+        btnAdd.prop('disabled',false);
 
-    //getting the first td of the last tr and
-    incrementCusId(lastTr.find('td:first').text());
-    $('#cid').val(cusId);
+        //getting the first td of the last tr and
+        incrementCusId(lastTr.find('td:first').text());
+        $('#cid').val(cusId);
+    }
 });
 
 btnDelete.click(function (){
-    selectedCustomerRow.remove();
 
-    //removing the selected customer from the list
-    customerList.splice(customerIndex,1);
-    console.log(customerList);
+    if (confirm("Are you sure you want to delete this Customer?")) {
+        selectedCustomerRow.remove();
 
-    clearCustomerFields();
+        //removing the selected customer from the list
+        customerList.splice(customerIndex,1);
+        console.log(customerList);
 
-    btnUpdate.prop('disabled',true);
-    btnDelete.prop('disabled',true);
-    btnAdd.prop('disabled',false);
+        clearCustomerFields();
 
-    incrementCusId(lastTr.find('td:first').text());
-    $('#cid').val(cusId);
+        btnUpdate.prop('disabled',true);
+        btnDelete.prop('disabled',true);
+        btnAdd.prop('disabled',false);
+
+        incrementCusId(lastTr.find('td:first').text());
+        $('#cid').val(cusId);
+    }
 
 });
 
 btnClear.click(function (){
     clearCustomerFields();
-})
+});
+
+$('#cid, #Name, #Address, #contact').keydown(function (event){
+    console.log(event.key)
+
+    if (event.key ==='Tab'){
+        event.preventDefault();
+    }
+});
+
+$('#Name').keydown(function (event){
+
+
+    if (/^[A-Za-z]+$/.test($('#Name').val())){
+
+        $('#Name').css('border-color', '#dee2e6');
+
+        if (event.key ==='Enter'){
+            $('#Address').focus();
+        }
+
+    }else {
+        $('#Name').css('border-color', 'red');
+    }
+
+});
+
+$('#Address').keydown(function (event){
+    if (/^[A-Za-z\s.'-]+$/.test($('#Address').val())){
+        $('#Address').css('border-color', '#dee2e6');
+        if (event.key ==='Enter'){
+
+            $('#contact').focus();
+        }
+    }else {
+        $('#Address').css('border-color', 'red');
+    }
+
+});
+
+$('#contact').keydown(function (event){
+
+    console.log(/^(?:\+94|0)(?:\d{9}|\d{2}-\d{7})$/.test($('#contact').val()));
+
+    if (/^(?:\+94|0)(?:\d{9}|\d{2}-\d{7})$/.test($('#contact').val())){
+        $('#contact').css('border-color', '#dee2e6');
+
+        if (event.key ==='Enter'){
+            addCustomer();
+        }
+    }else {
+        $('#contact').css('border-color', 'red');
+    }
+});
+
+function validateFields(){
+    if (!/^[A-Za-z]+$/.test($('#Name').val())){
+        $('#Name').focus();
+        $('#Name').css('border-color', 'red');
+        return false;
+    }
+    if (!/^[A-Za-z\s.'-]+$/.test($('#Address').val())){
+        $('#Address').focus();
+        $('#Address').css('border-color', 'red');
+        return false;
+    }
+    if (!/^(?:\+94|0)(?:\d{9}|\d{2}-\d{7})$/.test($('#contact').val())){
+        $('#contact').focus();
+        $('#contact').css('border-color', 'red');
+        return false;
+    }
+
+    $('#Name').css('border-color', '#dee2e6');
+    $('#Address').css('border-color', '#dee2e6');
+    $('#contact').css('border-color', '#dee2e6');
+    return true;
+}

@@ -24,6 +24,7 @@ function clearItemFields() {
     $('#UPrice').val("");
     $('#Qty').val("");
 
+    $('#ItemDesc').focus();
 }
 
 let btnItemAdd = $("#btnItemAdd");
@@ -84,49 +85,54 @@ tblItems.dblclick(function (event){
 //Button delete function
 btnItemUpdate.click(function (){
 
-    let iID = $('#Iid').val();
-    let itemDesc = $('#ItemDesc').val();
-    let itemPrice = $('#UPrice').val();
-    let itemQty = $('#Qty').val();
+    if (confirm("Are you sure you want to Update this Item?")) {
+        let iID = $('#Iid').val();
+        let itemDesc = $('#ItemDesc').val();
+        let itemPrice = $('#UPrice').val();
+        let itemQty = $('#Qty').val();
 
-    selectedItemRow.cells[0].textContent=iID;
-    selectedItemRow.cells[1].textContent=itemDesc;
-    selectedItemRow.cells[2].textContent=itemPrice;
-    selectedItemRow.cells[3].textContent=itemQty;
+        selectedItemRow.cells[0].textContent=iID;
+        selectedItemRow.cells[1].textContent=itemDesc;
+        selectedItemRow.cells[2].textContent=itemPrice;
+        selectedItemRow.cells[3].textContent=itemQty;
 
-    clearItemFields();
+        clearItemFields();
 
-    incrementItemId(lastITr.find('td:first').text());
-    $('#Iid').val(itemId);
+        incrementItemId(lastITr.find('td:first').text());
+        $('#Iid').val(itemId);
 
-    //updating the selected customer from the list
-    itemList[itemIndex].id=iID;
-    itemList[itemIndex].desc=itemDesc;
-    itemList[itemIndex].Up=itemPrice;
-    itemList[itemIndex].qty=itemQty;
+        //updating the selected customer from the list
+        itemList[itemIndex].id=iID;
+        itemList[itemIndex].desc=itemDesc;
+        itemList[itemIndex].Up=itemPrice;
+        itemList[itemIndex].qty=itemQty;
 
-    console.log(itemList);
+        console.log(itemList);
 
-    btnItemUpdate.prop('disabled',true);
-    btnItemDelete.prop('disabled',true);
-    btnItemAdd.prop('disabled',false);
+        btnItemUpdate.prop('disabled',true);
+        btnItemDelete.prop('disabled',true);
+        btnItemAdd.prop('disabled',false);
+    }
 });
 
 btnItemDelete.click(function (){
-    selectedItemRow.remove();
 
-    //removing the selected customer from the list
-    itemList.splice(itemIndex,1);
-    console.log(itemList);
+    if (confirm("Are you sure you want to delete this Customer?")) {
+        selectedItemRow.remove();
 
-    clearItemFields();
+        //removing the selected customer from the list
+        itemList.splice(itemIndex,1);
+        console.log(itemList);
 
-    incrementItemId(lastITr.find('td:first').text());
-    $('#Iid').val(itemId);
+        clearItemFields();
 
-    btnItemUpdate.prop('disabled',true);
-    btnItemDelete.prop('disabled',true);
-    btnItemAdd.prop('disabled',false);
+        incrementItemId(lastITr.find('td:first').text());
+        $('#Iid').val(itemId);
+
+        btnItemUpdate.prop('disabled',true);
+        btnItemDelete.prop('disabled',true);
+        btnItemAdd.prop('disabled',false);
+    }
 
 });
 

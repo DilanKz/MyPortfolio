@@ -58,7 +58,7 @@
       <h5 class="text-dark text-center m-lg-3 pt-5" >Add Customer</h5>
       <form>
         <div class="form-floating mb-3 mt-2">
-          <input type="text" class="form-control" id="cid" placeholder="Id">
+          <input type="text" class="form-control" id="cid" placeholder="Id" disabled>
           <label for="cid">Id</label>
         </div>
 
@@ -114,7 +114,7 @@
       <h5 class="text-dark text-center m-lg-3 pt-5" >Add Items</h5>
       <form>
         <div class="form-floating mb-3 mt-2">
-          <input type="text" class="form-control" id="Iid" placeholder="Id">
+          <input type="text" class="form-control" id="Iid" placeholder="Id" disabled>
           <label for="Iid">Item id</label>
         </div>
 
@@ -274,7 +274,7 @@
       <div class="row mt-3">
         <div class="col-10"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-outline-success">Add to Cart</button>
+          <button type="button" class="btn btn-outline-success" id="btnAddToCart">Add to Cart</button>
           <button type="button" class="btn btn-outline-warning">Clear</button>
         </div>
       </div>
@@ -284,24 +284,33 @@
 
   <section class="row mt-3 border border-dark rounded p-3">
     <div class="row">
-      <table class="table table-light table-striped">
-        <thead>
-        <tr>
-          <th style="background-color: #da9aef" scope="col">Item ID</th>
-          <th style="background-color: #da9aef" scope="col">Description</th>
-          <th style="background-color: #da9aef" scope="col">Qty</th>
-          <th style="background-color: #da9aef" scope="col">Unit Price</th>
-          <th style="background-color: #da9aef" scope="col">Total</th>
-          <th style="background-color: #da9aef" scope="col">Action</th>
-        </tr>
-        </thead>
-        <tbody>
+      <div class="col-10">
+        <table class="table table-light table-striped">
+          <thead>
+          <tr>
+            <th style="background-color: #da9aef" scope="col">Item ID</th>
+            <th style="background-color: #da9aef" scope="col">Description</th>
+            <th style="background-color: #da9aef" scope="col">Qty</th>
+            <th style="background-color: #da9aef" scope="col">Unit Price</th>
+            <th style="background-color: #da9aef" scope="col">Total</th>
+          </tr>
+          </thead>
+          <tbody id="pOTBody">
 
-        <tr>
+          <tr>
 
-        </tr>
-        </tbody>
-      </table>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-1 ms-4">
+        <div class="row mb-3">
+          <button type="button" class="btn btn-outline-warning">Update</button>
+        </div>
+        <div class="row mb-3">
+          <button type="button" class="btn btn-outline-danger">Delete</button>
+        </div>
+      </div>
     </div>
 
 
@@ -311,21 +320,21 @@
         <div class="col">
           <div class="input-group">
             <span class="input-group-text">Total-Rs:</span>
-            <input class="form-control" type="text" placeholder="" aria-label="Disabled input example" disabled>
+            <input id="maxTot" class="form-control" type="text" placeholder="" aria-label="Disabled input example" disabled>
           </div>
         </div>
 
         <div class="col">
           <div class="input-group">
             <span class="input-group-text">Discount-Rs:</span>
-            <input class="form-control" type="number" placeholder="" aria-label="Disabled input example">
+            <input id="discount" class="form-control" type="number" placeholder="" aria-label="Disabled input example">
           </div>
         </div>
 
         <div class="col">
           <div class="input-group">
             <span class="input-group-text">Sub Tot-Rs:</span>
-            <input class="form-control" type="text" placeholder="" aria-label="Disabled input example" disabled>
+            <input id="subTot" class="form-control" type="text" placeholder="" aria-label="Disabled input example" disabled>
           </div>
         </div>
       </div>

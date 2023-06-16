@@ -1,3 +1,6 @@
+let cartItem=[];
+let fullTotal = 0;
+
 let selectCusIds = $('#customerIds');
 let selectItemIds = $('#itemIds');
 
@@ -58,4 +61,48 @@ selectItemIds.click(function (){
         $('#poItemUP').val(itemListElement.Up);
 
     }
+});
+
+
+function getCartDetails(){
+}
+
+$('#btnAddToCart').click(function (){
+    let itemId;
+    let desc;
+    let unitPrice;
+    let qtyOnHand;
+    let buyingQty;
+
+    itemId = $("#itemIds :selected").text();
+    desc = $('#poItemDesc').val();
+    qtyOnHand = $('#poItemQtyOnHand').val();
+    unitPrice = $('#poItemUP').val();
+    buyingQty = $('#poItemQty').val();
+
+    //making the total for the table row
+    let total = eval(unitPrice+'*'+buyingQty);
+
+    fullTotal+=total;
+
+    cartItem.push({id: itemId ,desc: desc, Up: unitPrice,qty: qtyOnHand,bQty: buyingQty,tot:total});
+
+    //making and adding the row to the table
+    let tr = $('<tr> <td>'+ itemId +'</td> <td>'+ desc +'</td> <td>'+ buyingQty +'</td> <td>'+ unitPrice +'</td> <td>'+ total +'</td> </tr>');
+    $("#pOTBody").append(tr);
+
+
+    $('#maxTot').val(total);
+});
+
+$('#discount').keydown(function (event){
+
+    if (event.key==='Enter'){
+        if ($('#discount').val()!=="0"){
+            let subTotal = fullTotal-Number($('#discount').val());
+
+            $('#subTot').val(subTotal);
+        }
+    }
+
 });
