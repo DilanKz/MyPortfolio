@@ -1,6 +1,5 @@
-let cartItem=[];
 let fullTotal = 0;
-
+let orderID;
 let selectCusIds = $('#customerIds');
 let selectItemIds = $('#itemIds');
 
@@ -10,10 +9,19 @@ function loadCustomerOptionIds(){
 
     for (let index in customerList) {
         let option = $('<option value="'+index+'"> '+customerList[index].id+' </option>');
-        selectCusIds.append(option)
+        selectCusIds.append(option);
     }
 }
 
+function incrementOrderId(currentID) {
+    if (currentID==='no'){
+        orderID='O00-001';
+    }else {
+        let number =parseInt(currentID.slice(4), 10);
+        number++;
+        orderID = "O00-" + number.toString().padStart(3, "0");
+    }
+}
 
 function loadItemOptionIds(){
     selectItemIds.empty();
@@ -21,7 +29,7 @@ function loadItemOptionIds(){
 
     for (let index in itemList) {
         let option = $('<option value="'+index+'"> '+itemList[index].id+' </option>');
-        selectItemIds.append(option)
+        selectItemIds.append(option);
     }
 }
 

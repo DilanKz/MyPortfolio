@@ -1,10 +1,22 @@
 let selectedCustomerRow;
-let customerList=[];
 let customerIndex;
 let cusId;
 let lastTr;
 
+//customer fields
+const cusIDF = $('#cid');
+const cusNameF = $('#Name');
+const cusAddressF = $('#Address');
+const cusContactF = $('#contact');
 
+//buttons
+const btnAdd = $("#btnAdd");
+const tblCustomers = $("#tblCustomers");
+const btnUpdate = $("#btnUpdate");
+const btnDelete = $("#btnDelete");
+const btnClear = $("#btnClear");
+
+//id increment
 function incrementCusId(currentID) {
     if (currentID==='no'){
         cusId='C00-001';
@@ -17,25 +29,17 @@ function incrementCusId(currentID) {
 }
 
 incrementCusId('no');
-$('#cid').val(cusId);
+cusIDF.val(cusId);
 
 function clearCustomerFields() {
-    $('#cid').val("");
-    $('#Name').val("");
-    $('#Name').focus();
-    $('#Address').val("");
-    $('#contact').val("");
+    cusIDF.val("");
+    cusNameF.val("");
+    cusNameF.focus();
+    cusAddressF.val("");
+    cusContactF.val("");
 
 }
 
-
-
-
-let btnAdd = $("#btnAdd");
-let tblCustomers = $("#tblCustomers");
-let btnUpdate = $("#btnUpdate");
-let btnDelete = $("#btnDelete");
-let btnClear = $("#btnClear");
 
 
 btnUpdate.prop('disabled',true);
@@ -43,24 +47,17 @@ btnDelete.prop('disabled',true);
 
 
 function addCustomer(){
-    let cusID = $('#cid').val();
-    let cusName = $('#Name').val();
-    let cusAddress = $('#Address').val();
-    let cusContact = $('#contact').val();
+    let cusID = cusIDF.val();
+    let cusName = cusNameF.val();
+    let cusAddress = cusAddressF.val();
+    let cusContact = cusContactF.val();
 
     lastTr=$('<tr> <td>'+ cusID +'</td> <td>'+ cusName +'</td> <td>'+ cusAddress +'</td> <td>'+ cusContact +'</td> </tr>');
     $('#tblCustomers').append(lastTr);
 
     //adding the customer to the list
 
-    let customer={
-        id: cusID ,
-        name: cusName,
-        address: cusAddress,
-        contact: cusContact
-    }
-
-    customerList.push(customer);
+    customerList.push( new Customer(cusID,cusName,cusAddress,cusContact));
 
     customerList[0].name;
 
@@ -73,7 +70,7 @@ function addCustomer(){
     btnDelete.prop('disabled',false);
 
     incrementCusId(lastTr.find('td:first').text());
-    $('#cid').val(cusId);
+    cusIDF.val(cusId);
 }
 
 //Button Add function
@@ -96,20 +93,20 @@ tblCustomers.dblclick(function (event){
     customerIndex = customerList.findIndex(customerList => customerList.id === selectedCustomerRow.cells[0].textContent);
     console.log(customerIndex)
 
-    $('#cid').val(selectedCustomerRow.cells[0].textContent);
-    $('#Name').val(selectedCustomerRow.cells[1].textContent);
-    $('#Address').val(selectedCustomerRow.cells[2].textContent);
-    $('#contact').val(selectedCustomerRow.cells[3].textContent);
+    cusIDF.val(selectedCustomerRow.cells[0].textContent);
+    cusNameF.val(selectedCustomerRow.cells[1].textContent);
+    cusAddressF.val(selectedCustomerRow.cells[2].textContent);
+    cusContactF.val(selectedCustomerRow.cells[3].textContent);
 
 });
 //Button delete function
 btnUpdate.click(function (){
 
     if (confirm("Are you sure you want to Update this Customer?")) {
-        let cusID = $('#cid').val();
-        let cusName = $('#Name').val();
-        let cusAddress = $('#Address').val();
-        let cusContact = $('#contact').val();
+        let cusID = cusIDF.val();
+        let cusName = cusNameF.val();
+        let cusAddress = cusAddressF.val();
+        let cusContact = cusContactF.val();
 
         selectedCustomerRow.cells[0].textContent=cusID;
         selectedCustomerRow.cells[1].textContent=cusName;
@@ -134,7 +131,7 @@ btnUpdate.click(function (){
 
         //getting the first td of the last tr and
         incrementCusId(lastTr.find('td:first').text());
-        $('#cid').val(cusId);
+        cusIDF.val(cusId);
     }
 });
 
@@ -154,7 +151,7 @@ btnDelete.click(function (){
         btnAdd.prop('disabled',false);
 
         incrementCusId(lastTr.find('td:first').text());
-        $('#cid').val(cusId);
+        cusIDF.val(cusId);
     }
 
 });
@@ -163,7 +160,7 @@ btnClear.click(function (){
     clearCustomerFields();
 });
 
-$('#cid, #Name, #Address, #contact').keydown(function (event){
+$('#cid, #Name, #Address, #contact').keyup(function (event){
     console.log(event.key)
 
     if (event.key ==='Tab'){
@@ -171,70 +168,68 @@ $('#cid, #Name, #Address, #contact').keydown(function (event){
     }
 });
 
-$('#Name').keydown(function (event){
+cusNameF.keyup(function (event){
 
 
-    if (/^[A-Za-z]+$/.test($('#Name').val())){
+    if (/^[A-Za-z]+$/.test(cusNameF.val())){
 
-        $('#Name').css('border-color', '#dee2e6');
+        cusNameF.css('border-color', '#dee2e6');
 
         if (event.key ==='Enter'){
-            $('#Address').focus();
+            cusAddressF.focus();
         }
 
     }else {
-        $('#Name').css('border-color', 'red');
+        cusNameF.css('border-color', 'red');
     }
 
 });
 
-$('#Address').keydown(function (event){
-    if (/^[A-Za-z\s.'-]+$/.test($('#Address').val())){
-        $('#Address').css('border-color', '#dee2e6');
+cusAddressF.keyup(function (event){
+    if (/^[A-Za-z\s.'-]+$/.test(cusAddressF.val())){
+        cusAddressF.css('border-color', '#dee2e6');
         if (event.key ==='Enter'){
 
-            $('#contact').focus();
+            cusContactF.focus();
         }
     }else {
-        $('#Address').css('border-color', 'red');
+        cusAddressF.css('border-color', 'red');
     }
 
 });
 
-$('#contact').keydown(function (event){
+cusContactF.keyup(function (event){
 
-    console.log(/^(?:\+94|0)(?:\d{9}|\d{2}-\d{7})$/.test($('#contact').val()));
-
-    if (/^(?:\+94|0)(?:\d{9}|\d{2}-\d{7})$/.test($('#contact').val())){
-        $('#contact').css('border-color', '#dee2e6');
+    if (/^(?:\+94|0)(?:\d{9}|\d{2}-\d{7})$/.test(cusContactF.val())){
+        cusContactF.css('border-color', '#dee2e6');
 
         if (event.key ==='Enter'){
             addCustomer();
         }
     }else {
-        $('#contact').css('border-color', 'red');
+        cusContactF.css('border-color', 'red');
     }
 });
 
 function validateFields(){
-    if (!/^[A-Za-z]+$/.test($('#Name').val())){
-        $('#Name').focus();
-        $('#Name').css('border-color', 'red');
+    if (!/^[A-Za-z]+$/.test(cusNameF.val())){
+        cusNameF.focus();
+        cusNameF.css('border-color', 'red');
         return false;
     }
-    if (!/^[A-Za-z\s.'-]+$/.test($('#Address').val())){
-        $('#Address').focus();
-        $('#Address').css('border-color', 'red');
+    if (!/^[A-Za-z\s.'-]+$/.test(cusAddressF.val())){
+        cusAddressF.focus();
+        cusAddressF.css('border-color', 'red');
         return false;
     }
-    if (!/^(?:\+94|0)(?:\d{9}|\d{2}-\d{7})$/.test($('#contact').val())){
-        $('#contact').focus();
-        $('#contact').css('border-color', 'red');
+    if (!/^(?:\+94|0)(?:\d{9}|\d{2}-\d{7})$/.test(cusContactF.val())){
+        cusContactF.focus();
+        cusContactF.css('border-color', 'red');
         return false;
     }
 
-    $('#Name').css('border-color', '#dee2e6');
-    $('#Address').css('border-color', '#dee2e6');
-    $('#contact').css('border-color', '#dee2e6');
+    cusNameF.css('border-color', '#dee2e6');
+    cusAddressF.css('border-color', '#dee2e6');
+    cusContactF.css('border-color', '#dee2e6');
     return true;
 }
