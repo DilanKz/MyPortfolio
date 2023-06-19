@@ -89,8 +89,10 @@ tblCustomers.dblclick(function (event){
     btnAdd.prop('disabled',true);
 
     selectedCustomerRow = event.target.closest("tr");
+
     //getting the index of the selected customer
-    customerIndex = customerList.findIndex(customerList => customerList.id === selectedCustomerRow.cells[0].textContent);
+    customerIndex=findCustomerIndex(selectedCustomerRow.cells[0].textContent);
+
     console.log(customerIndex)
 
     cusIDF.val(selectedCustomerRow.cells[0].textContent);
@@ -99,6 +101,20 @@ tblCustomers.dblclick(function (event){
     cusContactF.val(selectedCustomerRow.cells[3].textContent);
 
 });
+
+
+//searching for a customer
+function findCustomerIndex(selectedCustomerId) {
+
+    for (let i = 0; i < customerList.length; i++) {
+        if (customerList[i].cid === selectedCustomerId) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
 //Button delete function
 btnUpdate.click(function (){
 
@@ -118,7 +134,7 @@ btnUpdate.click(function (){
 
 
         //updating the selected customer from the list
-        customerList[customerIndex].id=cusID;
+        customerList[customerIndex].cid=cusID;
         customerList[customerIndex].name=cusName;
         customerList[customerIndex].address=cusAddress;
         customerList[customerIndex].contact=cusContact;
