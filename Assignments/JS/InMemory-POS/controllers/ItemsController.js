@@ -60,7 +60,7 @@ function addItem() {
     $('#tblItemBody').append(lastITr);
 
     //adding the customer to the list
-    itemList.push(new Items(iID ,desc, itemPrice,itemQty));
+    itemList.push(new Items(iID ,itemDesc, itemPrice,itemQty));
 
     console.log(itemList);
     loadItemOptionIds();
@@ -90,7 +90,7 @@ tblItems.dblclick(function (event){
 
     selectedItemRow = event.target.closest("tr");
     //getting the index of the selected customer
-    itemIndex = itemList.findIndex(itemList => itemList.id === selectedItemRow.cells[0].textContent);
+    itemIndex = itemList.findIndex(itemList => itemList.iId === selectedItemRow.cells[0].textContent);
     console.log(itemIndex)
 
     itemIdF.val(selectedItemRow.cells[0].textContent);
@@ -120,9 +120,9 @@ btnItemUpdate.click(function (){
         itemIdF.val(itemId);
 
         //updating the selected customer from the list
-        itemList[itemIndex].id=iID;
+        itemList[itemIndex].iId=iID;
         itemList[itemIndex].desc=itemDesc;
-        itemList[itemIndex].Up=itemPrice;
+        itemList[itemIndex].unitP=itemPrice;
         itemList[itemIndex].qty=itemQty;
 
         console.log(itemList);

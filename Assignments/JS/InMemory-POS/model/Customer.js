@@ -7,3 +7,10 @@ class Customer{
         this.contact = contact;
     }
 }
+
+/*let customer={
+    id:'',
+    name:'',
+    address:'',
+    contact:'',
+}*/

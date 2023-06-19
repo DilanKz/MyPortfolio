@@ -2,13 +2,14 @@ let fullTotal = 0;
 let orderID;
 let selectCusIds = $('#customerIds');
 let selectItemIds = $('#itemIds');
+let customerListElement;
 
 function loadCustomerOptionIds(){
     selectCusIds.empty();
     selectCusIds.append($('<option selected>Select_ID</option>'));
 
     for (let index in customerList) {
-        let option = $('<option value="'+index+'"> '+customerList[index].id+' </option>');
+        let option = $('<option value="'+index+'"> '+customerList[index].cid+' </option>');
         selectCusIds.append(option);
     }
 }
@@ -28,7 +29,7 @@ function loadItemOptionIds(){
     selectItemIds.append($('<option selected>Select_ID</option>'));
 
     for (let index in itemList) {
-        let option = $('<option value="'+index+'"> '+itemList[index].id+' </option>');
+        let option = $('<option value="'+index+'"> '+itemList[index].iId+' </option>');
         selectItemIds.append(option);
     }
 }
@@ -46,34 +47,56 @@ $('#dtf').val(dateFormatter);
 
 selectCusIds.click(function (){
     let text = $("#customerIds :selected").text();
-    let index = $("#customerIds").val();
-    if (text!=='Select_ID'){
-        console.log(text+" "+index);
+    //if (text.startsWith('C')){
+        let index = $("#customerIds").val();
+        if (text!=='Select_ID'){
+            console.log(text+" "+index);
 
-        let customerListElement = customerList[Number(index)];
-        console.log(Number(index));
-        $('#poCustomerName').val(customerListElement.name);
-    }
+            customerListElement = customerList[Number(index)];
+            console.log(Number(index));
+            $('#poCustomerName').val(customerListElement.name);
+        }
+    //}
 });
 
 selectItemIds.click(function (){
     let text = $("#itemIds :selected").text();
-    let index = $("#itemIds").val();
-    if (text!=='Select_ID'){
-        console.log(text+" "+index);
+    //if (text.startsWith('I')){
+        let index = $("#itemIds").val();
+        if (text!=='Select_ID'){
+            console.log(text+" "+index);
 
-        let itemListElement = itemList[Number(index)];
+            let itemListElement = itemList[Number(index)];
 
-        $('#poItemDesc').val(itemListElement.desc);
-        $('#poItemQtyOnHand').val(itemListElement.qty);
-        $('#poItemUP').val(itemListElement.Up);
+            $('#poItemDesc').val(itemListElement.desc);
+            $('#poItemQtyOnHand').val(itemListElement.qty);
+            $('#poItemUP').val(itemListElement.unitP);
 
-    }
+        }
+    //}
 });
 
 
-function getCartDetails(){
-}
+/*function getCartDetails(){
+    let itemId;
+    let desc;
+    let unitPrice;
+    let qtyOnHand;
+    let buyingQty;
+
+    itemId = $("#itemIds :selected").text();
+    desc = $('#poItemDesc').val();
+    qtyOnHand = $('#poItemQtyOnHand').val();
+    unitPrice = $('#poItemUP').val();
+    buyingQty = $('#poItemQty').val();
+
+    //making the total for the table row
+    let total = eval(unitPrice+'*'+buyingQty);
+
+    fullTotal+=total;
+
+    return new OrderDetails(itemId,qtyOnHand,desc,buyingQty);
+}*/
 
 $('#btnAddToCart').click(function (){
     let itemId;
@@ -112,5 +135,19 @@ $('#discount').keydown(function (event){
             $('#subTot').val(subTotal);
         }
     }
+
+});
+
+//clearing fields
+function clearAllFields() {
+    cartItem=[];
+
+}
+
+//purchase Order
+$('#purchaseOrder').click(function (){
+
+    let orders = new Orders(orderID,customerListElement,date,cartItem);
+
 
 });
