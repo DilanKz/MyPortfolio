@@ -4,6 +4,9 @@ let selectCusIds = $('#customerIds');
 let selectItemIds = $('#itemIds');
 let customerListElement;
 
+let selectedCusID="";
+let selectedItemID="";
+
 function loadCustomerOptionIds(){
     selectCusIds.empty();
     selectCusIds.append($('<option selected>Select_ID</option>'));
@@ -46,25 +49,27 @@ let dateFormatter=`${fullDay}-${fullMonth}-${fullYear}`;
 $('#dtf').val(dateFormatter);
 
 selectCusIds.click(function (){
-    let text = $("#customerIds :selected").text();
-    //if (text.startsWith('C')){
+    selectedCusID = $("#customerIds :selected").text();
+    if (selectedCusID.length > 0){
+        $("#customerIds").css("border-color",'white');
         let index = $("#customerIds").val();
-        if (text!=='Select_ID'){
-            console.log(text+" "+index);
+        if (selectedCusID!=='Select_ID'){
+            console.log(selectedCusID+" "+index);
 
             customerListElement = customerList[Number(index)];
             console.log(Number(index));
             $('#poCustomerName').val(customerListElement.name);
         }
-    //}
+    }
 });
 
 selectItemIds.click(function (){
-    let text = $("#itemIds :selected").text();
-    //if (text.startsWith('I')){
+    selectedItemID = $("#itemIds :selected").text();
+    if (selectedItemID.length > 0 ){
+        $("#itemIds").css("border-color",'white');
         let index = $("#itemIds").val();
-        if (text!=='Select_ID'){
-            console.log(text+" "+index);
+        if (selectedItemID!=='Select_ID'){
+            console.log(selectedItemID+" "+index);
 
             let itemListElement = itemList[Number(index)];
 
@@ -72,8 +77,10 @@ selectItemIds.click(function (){
             $('#poItemQtyOnHand').val(itemListElement.qty);
             $('#poItemUP').val(itemListElement.unitP);
 
+        }else {
+
         }
-    //}
+    }
 });
 
 
@@ -98,32 +105,45 @@ selectItemIds.click(function (){
     return new OrderDetails(itemId,qtyOnHand,desc,buyingQty);
 }*/
 
+
 $('#btnAddToCart').click(function (){
-    let itemId;
-    let desc;
-    let unitPrice;
-    let qtyOnHand;
-    let buyingQty;
 
-    itemId = $("#itemIds :selected").text();
-    desc = $('#poItemDesc').val();
-    qtyOnHand = $('#poItemQtyOnHand').val();
-    unitPrice = $('#poItemUP').val();
-    buyingQty = $('#poItemQty').val();
+    if (selectedCusID.length > 0 && selectedItemID.length > 0 && selectedItemID!=='Select_ID' && selectedCusID!=='Select_ID'){
+        let itemId;
+        let desc;
+        let unitPrice;
+        let qtyOnHand;
+        let buyingQty;
 
-    //making the total for the table row
-    let total = eval(unitPrice+'*'+buyingQty);
-
-    fullTotal+=total;
-
-    cartItem.push({id: itemId ,desc: desc, Up: unitPrice,qty: qtyOnHand,bQty: buyingQty,tot:total});
-
-    //making and adding the row to the table
-    let tr = $('<tr> <td>'+ itemId +'</td> <td>'+ desc +'</td> <td>'+ buyingQty +'</td> <td>'+ unitPrice +'</td> <td>'+ total +'</td> </tr>');
-    $("#pOTBody").append(tr);
+        itemId = $("#itemIds :selected").text();
+        desc = $('#poItemDesc').val();
+        qtyOnHand = $('#poItemQtyOnHand').val();
+        unitPrice = $('#poItemUP').val();
+        buyingQty = $('#poItemQty').val();
 
 
-    $('#maxTot').val(total);
+        if (/^\d+$/.test($('#poItemQty').val()) && buyingQty<qtyOnHand ){
+            $('#poItemQty').css("border-color",'white');
+            //making the total for the table row
+            let total = eval(unitPrice+'*'+buyingQty);
+
+            fullTotal+=total;
+
+            cartItem.push({id: itemId ,desc: desc, Up: unitPrice,qty: qtyOnHand,bQty: buyingQty,tot:total});
+
+            //making and adding the row to the table
+            let tr = $('<tr> <td>'+ itemId +'</td> <td>'+ desc +'</td> <td>'+ buyingQty +'</td> <td>'+ unitPrice +'</td> <td>'+ total +'</td> </tr>');
+            $("#pOTBody").append(tr);
+
+
+            $('#maxTot').val(total);
+        }else {
+            $('#poItemQty').css("border-color",'red');
+        }
+    }else {
+        $("#customerIds").css("border-color",'red');
+        $("#itemIds").css("border-color",'red');
+    }
 });
 
 $('#discount').keydown(function (event){
@@ -146,6 +166,13 @@ function clearAllFields() {
 
 //purchase Order
 $('#purchaseOrder').click(function (){
+
+    if (selectedCusID.length > 0 && selectedItemID.length > 0 && selectedItemID!=='Select_ID' && selectedCusID!=='Select_ID'){
+
+    }else {
+        $("#customerIds").css("border-color",'red');
+        $("#itemIds").css("border-color",'red');
+    }
 
     let orders = new Orders(orderID,customerListElement,date,cartItem);
 
