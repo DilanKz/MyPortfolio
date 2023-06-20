@@ -90,7 +90,8 @@ tblItems.dblclick(function (event){
 
     selectedItemRow = event.target.closest("tr");
     //getting the index of the selected customer
-    itemIndex = itemList.findIndex(itemList => itemList.iId === selectedItemRow.cells[0].textContent);
+    //itemIndex = itemList.findIndex(itemList => itemList.iId === selectedItemRow.cells[0].textContent);
+    itemIndex = findItem(selectedItemRow.cells[0].textContent);
     console.log(itemIndex)
 
     itemIdF.val(selectedItemRow.cells[0].textContent);
@@ -99,6 +100,18 @@ tblItems.dblclick(function (event){
     itemQtyF.val(selectedItemRow.cells[3].textContent);
 
 });
+
+
+function findItem(selectedItem) {
+    for (let i = 0; i < itemList.length; i++) {
+        if (itemList[i].iId === selectedItem) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
 //Button delete function
 btnItemUpdate.click(function (){
 
