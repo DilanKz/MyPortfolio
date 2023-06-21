@@ -1,11 +1,21 @@
 let fullTotal = 0;
-let orderID;
+let orderID='O00-001';
 let selectCusIds = $('#customerIds');
 let selectItemIds = $('#itemIds');
 let customerListElement;
 
 let selectedCusID="";
 let selectedItemID="";
+
+function nextOrderID(){
+    let number =parseInt(orderID.slice(4), 10);
+    number++;
+    orderID = "O00-" + number.toString().padStart(3, "0");
+    console.log(orderID);
+}
+
+$('#currentOrderID').val(orderID);
+
 
 function loadCustomerOptionIds(){
     selectCusIds.empty();
@@ -14,16 +24,6 @@ function loadCustomerOptionIds(){
     for (let index in customerList) {
         let option = $('<option value="'+index+'"> '+customerList[index].cid+' </option>');
         selectCusIds.append(option);
-    }
-}
-
-function incrementOrderId(currentID) {
-    if (currentID==='no'){
-        orderID='O00-001';
-    }else {
-        let number =parseInt(currentID.slice(4), 10);
-        number++;
-        orderID = "O00-" + number.toString().padStart(3, "0");
     }
 }
 
@@ -47,6 +47,13 @@ let fullYear = date.getFullYear();
 
 let dateFormatter=`${fullDay}-${fullMonth}-${fullYear}`;
 $('#dtf').val(dateFormatter);
+
+function clearPoFields(){
+    $('#itemIds option:contains("Select_ID")').prop('selected', true);
+    $('#poItemDesc').val("");
+    $('#poItemQtyOnHand').val("");
+    $('#poItemUP').val("");
+}
 
 selectCusIds.click(function (){
     selectedCusID = $("#customerIds :selected").text();
@@ -74,8 +81,8 @@ selectItemIds.click(function (){
             let itemListElement = itemList[Number(index)];
 
             $('#poItemDesc').val(itemListElement.desc);
-            $('#poItemQtyOnHand').val(itemListElement.qty);
-            $('#poItemUP').val(itemListElement.unitP);
+            $('#poItemQtyOnHand').val(itemListElement.unitP);
+            $('#poItemUP').val(itemListElement.qty);
 
         }else {
 
@@ -83,27 +90,41 @@ selectItemIds.click(function (){
     }
 });
 
+function qtyValidate(){
 
-/*function getCartDetails(){
-    let itemId;
-    let desc;
-    let unitPrice;
-    let qtyOnHand;
-    let buyingQty;
+    if (/^\d+$/.test($('#poItemQty').val())){
+        let qtyOnHand = $('#poItemQtyOnHand').val();
+        $('#poItemQty').css("border-color",'white');
 
-    itemId = $("#itemIds :selected").text();
-    desc = $('#poItemDesc').val();
-    qtyOnHand = $('#poItemQtyOnHand').val();
-    unitPrice = $('#poItemUP').val();
-    buyingQty = $('#poItemQty').val();
+        if (qtyOnHand>Number($('#poItemQty').val())){
+            $('#poItemQty').css("border-color",'white');
+            return true;
+        }else {
+            $('#poItemQty').css("border-color",'red');
+            return true;
+        }
 
-    //making the total for the table row
-    let total = eval(unitPrice+'*'+buyingQty);
+    }else {
+        $('#poItemQty').css("border-color",'red');
+        return false;
+    }
+}
 
-    fullTotal+=total;
+$('#poItemQty').keyup(function (){
+    if (/^\d+$/.test($('#poItemQty').val())){
+        let qtyOnHand = $('#poItemQtyOnHand').val();
+        $('#poItemQty').css("border-color",'white');
 
-    return new OrderDetails(itemId,qtyOnHand,desc,buyingQty);
-}*/
+        if (qtyOnHand>Number($('#poItemQty').val())){
+            $('#poItemQty').css("border-color",'white');
+        }else {
+            $('#poItemQty').css("border-color",'red');
+        }
+
+    }else {
+        $('#poItemQty').css("border-color",'red');
+    }
+});
 
 
 $('#btnAddToCart').click(function (){
@@ -122,21 +143,25 @@ $('#btnAddToCart').click(function (){
         buyingQty = $('#poItemQty').val();
 
 
-        if (/^\d+$/.test($('#poItemQty').val()) && buyingQty<qtyOnHand ){
+        if (qtyValidate() ){
             $('#poItemQty').css("border-color",'white');
-            //making the total for the table row
-            let total = eval(unitPrice+'*'+buyingQty);
+                $('#poItemQty').css("border-color",'white');
+                //making the total for the table row
+                let total = eval(unitPrice+'*'+buyingQty);
 
-            fullTotal+=total;
+                fullTotal+=total;
 
-            cartItem.push({id: itemId ,desc: desc, Up: unitPrice,qty: qtyOnHand,bQty: buyingQty,tot:total});
+                cartItem.push({id: itemId ,desc: desc, Up: unitPrice,qty: qtyOnHand,bQty: buyingQty,tot:total});
 
-            //making and adding the row to the table
-            let tr = $('<tr> <td>'+ itemId +'</td> <td>'+ desc +'</td> <td>'+ buyingQty +'</td> <td>'+ unitPrice +'</td> <td>'+ total +'</td> </tr>');
-            $("#pOTBody").append(tr);
+                //making and adding the row to the table
+                let tr = $('<tr> <td>'+ itemId +'</td> <td>'+ desc +'</td> <td>'+ buyingQty +'</td> <td>'+ unitPrice +'</td> <td>'+ total +'</td> </tr>');
+                $("#pOTBody").append(tr);
 
 
-            $('#maxTot').val(total);
+                $('#maxTot').val(total);
+
+                clearPoFields()
+
         }else {
             $('#poItemQty').css("border-color",'red');
         }
@@ -164,17 +189,26 @@ function clearAllFields() {
 
 }
 
+
 //purchase Order
 $('#purchaseOrder').click(function (){
 
     if (selectedCusID.length > 0 && selectedItemID.length > 0 && selectedItemID!=='Select_ID' && selectedCusID!=='Select_ID'){
+        let orders = new Orders(orderID,customerListElement,date,cartItem);
+        console.log(orders);
 
+        //clearing fields
+        $('#customerIds option:contains("Select_ID")').prop('selected', true);
+        $('#poCustomerName').val("");
+
+
+
+        //incrementing next order id
+        nextOrderID();
+        $('#currentOrderID').val(orderID);
     }else {
         $("#customerIds").css("border-color",'red');
         $("#itemIds").css("border-color",'red');
     }
-
-    let orders = new Orders(orderID,customerListElement,date,cartItem);
-
 
 });
