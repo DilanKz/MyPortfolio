@@ -57,7 +57,7 @@ function addItem() {
     let itemQty = itemQtyF.val();
 
     //adding the customer to the list and to the table
-    itemList.push(new Items(iID ,itemDesc, itemPrice,itemQty));
+    itemList.push(new Items(iID ,itemDesc,itemQty, itemPrice));
     addItemsToTable();
     console.log(itemList);
     loadItemOptionIds();
@@ -75,7 +75,7 @@ function addItemsToTable() {
     tblItems.empty();
 
     for (let item of itemList) {
-        let row = $('<tr> <td>'+ item.iId +'</td> <td>'+ item.desc +'</td> <td>'+ item.qty +'</td> <td>'+ item.unitP +'</td> </tr>');
+        let row = $('<tr> <td>'+ item.iId +'</td> <td>'+ item.desc +'</td> <td>'+ item.unitP +'</td> <td>'+ item.qty +'</td> </tr>');
         lastITr =row;
         tblItems.append(row);
     }
@@ -222,7 +222,7 @@ itemQtyF.keyup(function (event){
         itemQtyF.css('border-color', '#dee2e6');
 
         if (event.key ==='Enter'){
-            addCustomer();
+            addItem();
         }
     }else {
         itemQtyF.css('border-color', 'red');
