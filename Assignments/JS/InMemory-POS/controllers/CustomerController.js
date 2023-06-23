@@ -77,9 +77,9 @@ function addCustomersToTable() {
     tblCustomers.empty();
 
     for (let customer of customerList) {
-        let row = $('<tr> <td>'+ customerList[0].cid +'</td> <td>'+ customerList[0].name +'</td> <td>'+ customerList[0].address +'</td> <td>'+ customerList[0].contact +'</td> </tr>');
-        lastTr =row;
+        let row = $('<tr> <td>'+ customer.cid +'</td> <td>'+ customer.name +'</td> <td>'+ customer.address +'</td> <td>'+ customer.contact +'</td> </tr>');
         tblCustomers.append(row);
+        lastTr =row;
     }
 }
 
