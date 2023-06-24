@@ -39,7 +39,7 @@ function loadItemOptionIds(){
 }
 
 //Date formatter
-
+/*
 let date=new Date();
 
 let fullDay = date.getDay();
@@ -48,7 +48,16 @@ let fullYear = date.getFullYear();
 
 let dateFormatter=`${fullDay}-${fullMonth}-${fullYear}`;
 
-$('#dtf').val(dateFormatter);
+$('#dtf').val(dateFormatter);*/
+
+function getTodayDate() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+
+    $('#dtf').val(`${year}-${month}-${day}`);
+}
 
 function clearPoFields(){
     $('#itemIds option:contains("Select_ID")').prop('selected', true);
@@ -223,11 +232,12 @@ $('#btnAddToCart').click(function (){
     }
 });
 
+let subTotal;
 $('#discount').keydown(function (event){
 
     if (event.key==='Enter'){
         if ($('#discount').val()!="0"){
-            let subTotal = fullTotal-Number($('#discount').val());
+            subTotal = fullTotal-Number($('#discount').val());
 
             $('#subTot').val(subTotal);
         }
@@ -246,14 +256,14 @@ function clearAllFields() {
 $('#purchaseOrder').click(function (){
 
     if (selectedCusID.length > 0 && selectedItemID.length > 0 && selectedItemID!=='Select_ID' && selectedCusID!=='Select_ID'){
-        let orders = new Orders(orderID,customerListElement,date,cartItem);
+        let orders = new Orders(orderID,customerListElement,$('#dtf').val(),cartItem,subTotal);
         //console.log(orders);
 
         //clearing fields
         $('#customerIds option:contains("Select_ID")').prop('selected', true);
         $('#poCustomerName').val("");
 
-
+        Order.push(orders);
 
         //incrementing next order id
         nextOrderID();
