@@ -232,6 +232,16 @@ $('#btnAddToCart').click(function (){
     }
 });
 
+$('#deleteCartItem').click(function (event){
+    event.preventDefault();
+
+    //let selectedRows = $("#pOTBody").find("tr.selected");
+    let selectedRows = $("#pOTBody tr.selected");
+    console.log(selectedRows);
+
+    selectedRows.find('td:first').text();
+});
+
 let subTotal;
 $('#discount').keydown(function (event){
 
@@ -240,6 +250,9 @@ $('#discount').keydown(function (event){
             subTotal = fullTotal-Number($('#discount').val());
 
             $('#subTot').val(subTotal);
+        }else if ($('#discount').val()=="0"){
+            $('#subTot').val(fullTotal);
+            subTotal = fullTotal-Number($('#discount').val());
         }
     }
 
@@ -262,8 +275,14 @@ $('#purchaseOrder').click(function (){
         //clearing fields
         $('#customerIds option:contains("Select_ID")').prop('selected', true);
         $('#poCustomerName').val("");
+        $("#pOTBody").empty();
+        $('#discount').val("");
+        $('#subTot').val("");
+        cartItem=[];
+
 
         Order.push(orders);
+        addOrdersToTable();
 
         //incrementing next order id
         nextOrderID();
