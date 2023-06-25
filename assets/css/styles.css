@@ -803,6 +803,45 @@ canvas {
     line-height: 2px;
     color: var(--clr);
 }*/
+
+
+.skills {
+    min-height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222831;
+    margin: 0 0 2vh;
+}
+
+.skillContainer {
+    display: flex;
+    justify-content: center;
+    width: max-content;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.skill_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.skill_item:hover {
+    transform: translateY(15px);
+}
+
+.skill_item img {
+    max-width: 50%;
+    border-radius: 100%;
+    border: 5px solid #f7f7f7;
+    filter: drop-shadow(-20px 0 10px rgba(0, 0, 0, 0.1));
+    cursor: pointer;
+}
+
 /*skill end*/
 
 /*Education and skills end*/

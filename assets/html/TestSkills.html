@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Menu</title>
+    <!-- Embedding Fonts from google fonts -->
+
+    <style>
+        .skills {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;
+        }
+
+        .skillContainer {
+            display: flex;
+            justify-content: center;
+            width: max-content;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .skill_item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .skill_item:hover {
+            transform: translateY(25px);
+        }
+
+        .skill_item img {
+            max-width: 50%;
+            border-radius: 100%;
+            border: 5px solid #f7f7f7;
+            filter: drop-shadow(-20px 0 10px rgba(0, 0, 0, 0.1));
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<section class="skills">
+    <div class="skillContainer">
+        <div class="skill_item">
+            <img src="../img/icons8-html5-480.png" alt=""/>
+        </div>
+        <div class="skill_item">
+            <img src="../img/icons8-css-logo-480.png" alt=""/>
+        </div>
+
+        <div class="skill_item">
+            <img src="../img/icons8-javascript-480.png" alt=""/>
+        </div>
+        <div class="skill_item">
+            <img src="../img/icons8-java-480.png" alt=""/>
+        </div>
+        <div class="skill_item">
+            <img src="../img/icons8-python-480.png" alt=""/>
+        </div>
+        <div class="skill_item">
+            <img src="../img/icons8-c-sharp-logo-480.png" alt=""/>
+        </div>
+        <div class="skill_item">
+            <img src="../img/icons8-mysql-480.png" alt=""/>
+        </div>
+    </div>
+</section>
+</body>
+</html>
