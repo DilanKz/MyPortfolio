@@ -1659,12 +1659,35 @@ footer span{
         visibility: visible;
     }
 
+    menu a{
+        display: block;
+    }
+
     .menuBars i{
         padding: 2px;
     }
 
     #nav{
-        visibility: hidden;
+        /*visibility: hidden;*/
+    }
+
+    #nav menu{
+        transition: 0.5s;
+        transform: translate(3.5vh, -50vh);
+        position: relative;
+        right: -4vh;
+        top: 13vh;
+        text-align: right;
+    }
+
+    #navMenu{
+        background-color: #222831;
+    }
+
+    #nav menu a{
+        font-size: 15px;
+        margin-top: 2vh;
+        padding: 5px;
     }
 
     #navIcons{
