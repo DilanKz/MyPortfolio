@@ -62,6 +62,7 @@
         </div>
     </header>
 
+    <canvas id="canvas"></canvas>
     <main>
         <div id="space" class="betweenSpaces"></div>
         <div  class="betweenSpaces"></div>
@@ -446,11 +447,11 @@
 
                 <section id="contactForm">
                     <h4 >Reach <span>Me</span></h4>
-                        <form action="Data" method="post">
+                        <form onsubmit="sendEmail(); reset(); return false;" method="post">
                             <p>Got a question or a proposal or just want to say hi ? Go ahead feel free</p>
-                            <input name="Name" type="text" placeholder="name" required>
-                            <input name="email" type="email" placeholder="email" required>
-                            <textarea name="description" type="text" placeholder="what you have to say" required></textarea>
+                            <input id="txtName" name="Name" type="text" placeholder="name" required>
+                            <input id="txtEmail" name="email" type="email" placeholder="email" required>
+                            <textarea id="txtDesc" name="description" type="text" placeholder="what you have to say" required></textarea>
 
                             <button id="contactSubmitBtn" type="submit">
                                 <span>Send</span>
@@ -468,6 +469,7 @@
         <span>© 2023 by Tharindu Dilan</span>
     </footer>
 
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="assets/JS/Script.js"></script>
 
 </body>
