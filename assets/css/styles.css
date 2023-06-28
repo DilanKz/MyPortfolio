@@ -327,10 +327,10 @@ canvas {
 
 #aboutMeSection > aside {
     position: absolute;
-    left: 10%;
-    top: 25%;
-    width: 250px;
-    height: 400px;
+    left: 3%;
+    top: 15%;
+    width: 550px;
+    height: 550px;
     margin-bottom: 2vh;
 }
 
@@ -1364,6 +1364,20 @@ footer span{
         font-size: 8vw;
     }
 
+    #aboutMeSection > aside {
+        position: absolute;
+        left: -25%;
+        top: 10%;
+        width: max-content;
+        height: 400px;
+        margin-bottom: 2vh;
+    }
+
+    #aboutMeSection > aside > img {
+        width: 80%;
+        height: 90%;
+    }
+
     .betweenSpaces {
         height: 60px;
     }
@@ -1594,6 +1608,19 @@ footer span{
 
     #aboutMenBtn > article p{
         width: 85%
+    }
+
+    #aboutMeSection > aside {
+        position: absolute;
+        left: -25%;
+        top: 16%;
+        width: 600px;
+        height: 600px;
+        margin-bottom: 2vh;
+    }
+
+    #aboutMeSection > aside {
+        object-fit: none;
     }
 
     #EnSSection {

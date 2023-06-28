@@ -1,77 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Menu</title>
-    <!-- Embedding Fonts from google fonts -->
-
+    <title>Mouse Trail Effect</title>
     <style>
-        .skills {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #000000;
+        canvas{
+            width: 100%;
+            height: 100%;
+            background-color: black;
         }
-
-        .skillContainer {
-            display: flex;
-            justify-content: center;
-            width: max-content;
-            max-width: 1440px;
-            margin: 0 auto;
-        }
-
-        .skill_item {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            transition: all 0.3s;
-        }
-
-        .skill_item:hover {
-            transform: translateY(25px);
-        }
-
-        .skill_item img {
-            max-width: 50%;
-            border-radius: 100%;
-            border: 5px solid #f7f7f7;
-            filter: drop-shadow(-20px 0 10px rgba(0, 0, 0, 0.1));
-            cursor: pointer;
-        }
-
     </style>
 </head>
 <body>
-<section class="skills">
-    <div class="skillContainer">
-        <div class="skill_item">
-            <img src="../img/icons8-html5-480.png" alt=""/>
-        </div>
-        <div class="skill_item">
-            <img src="../img/icons8-css-logo-480.png" alt=""/>
-        </div>
+    <canvas id="canvas"></canvas>
 
-        <div class="skill_item">
-            <img src="../img/icons8-javascript-480.png" alt=""/>
-        </div>
-        <div class="skill_item">
-            <img src="../img/icons8-java-480.png" alt=""/>
-        </div>
-        <div class="skill_item">
-            <img src="../img/icons8-python-480.png" alt=""/>
-        </div>
-        <div class="skill_item">
-            <img src="../img/icons8-c-sharp-logo-480.png" alt=""/>
-        </div>
-        <div class="skill_item">
-            <img src="../img/icons8-mysql-480.png" alt=""/>
-        </div>
-    </div>
-</section>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let spots = [];
+        let hue = 0;
+
+        const mouse = {
+            x: undefined,
+            y: undefined
+        }
+
+        class Particle {
+            constructor() {
+                this.x = mouse.x;
+                this.y = mouse.y;
+                this.size = Math.random() * 2 + 0.1;
+                this.speedX = Math.random() * 2 - 1;
+                this.speedY = Math.random() * 2 - 1;
+                this.color = generateYellowOrangeColor();
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.size > 0.1) this.size -= 0.03;
+            }
+
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        canvas.addEventListener('mousemove', function (event) {
+            mouse.x = event.x;
+            mouse.y = event.y;
+
+            if (spots.length < 150) {
+                spots.push(new Particle());
+            }
+        });
+
+        function generateYellowOrangeColor() {
+            const hue = Math.floor(Math.random() * 30) + 15; // Range of hues between 15 and 45
+            const saturation = Math.floor(Math.random() * 30) + 70; // Range of saturation between 70 and 100
+            const lightness = Math.floor(Math.random() * 20) + 50; // Range of lightness between 50 and 70
+
+            return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+        }
+
+        /*function handleParticles() {
+            for (let i = 0; i < spots.length; i++) {
+                spots[i].update();
+                spots[i].draw();
+
+                for (let j = 0; j < spots.length; j++) {
+                    const dx = spots[i].x - spots[j].x;
+                    const dy = spots[i].y - spots[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance > 90) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = spots[i].color;
+                        ctx.lineWidth = spots[i].size;
+                        ctx.moveTo(spots[i].x, spots[i].y);
+                        ctx.lineTo(spots[j].x, spots[j].y);
+                        ctx.stroke();
+                    }
+                }
+
+                if (spots[i].size <= 0.3) {
+                    spots.splice(i, 1);
+                    i--;
+                }
+            }
+        }*/
+
+        function handleParticles() {
+            for (let i = 0; i < spots.length; i++) {
+                spots[i].update();
+                spots[i].draw();
+
+                for (let j = 0; j < spots.length; j++) {
+                    const dx = spots[i].x - spots[j].x;
+                    const dy = spots[i].y - spots[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance > 90) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = spots[i].color;
+                        ctx.lineWidth = spots[i].size * 0.5; // Adjust the multiplier to make it smaller or larger
+                        ctx.moveTo(spots[i].x, spots[i].y);
+                        ctx.lineTo(spots[j].x, spots[j].y);
+                        ctx.stroke();
+                    }
+                }
+
+                if (spots[i].size <= 0.3) {
+                    spots.splice(i, 1);
+                    i--;
+                }
+            }
+        }
+
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            handleParticles();
+            hue++;
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', function () {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        window.addEventListener('mouseleave', function () {
+            mouse.x = undefined;
+            mouse.y = undefined;
+        });
+
+        animate();
+
+    </script>
+
 </body>
 </html>
