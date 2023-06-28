@@ -231,16 +231,36 @@ $('#btnAddToCart').click(function (){
         $("#itemIds").css("border-color",'red');
     }
 });
+$('#deleteCartItem').prop('disabled',true);
+let selectedCartRows
+$("#pOTBody").dblclick(function (event) {
+    selectedCartRows = event.target.closest("tr");
+    console.log();
+    $('#deleteCartItem').prop('disabled',false);
+});
 
 $('#deleteCartItem').click(function (event){
-    event.preventDefault();
+    $('#deleteCartItem').prop('disabled',true);
+    selectedCartRows.remove();
 
-    //let selectedRows = $("#pOTBody").find("tr.selected");
-    let selectedRows = $("#pOTBody tr.selected");
-    console.log(selectedRows);
 
-    selectedRows.find('td:first').text();
+    //removing the selected Cart from the list and updating the items
+    let findCartItemIndex = findCartItem(selectedCartRows.cells[0].textContent.trim())
+    cartItem.splice(findCartItemIndex,1);
+    const updatingItemIndex = searchItem(selectedCartRows.cells[0].textContent.trim());
+    itemList[updatingItemIndex].qty=Number(itemList[updatingItemIndex].qty)+Number(selectedCartRows.cells[2].textContent);
+    addItemsToTable();
 });
+
+function findCartItem(selectedItem) {
+    for (let i = 0; i < cartItem.length; i++) {
+        if (cartItem[i].id === selectedItem) {
+            return i;
+        }
+    }
+
+    return -1;
+}
 
 let subTotal;
 $('#discount').keydown(function (event){
@@ -279,6 +299,7 @@ $('#purchaseOrder').click(function (){
         $('#discount').val("");
         $('#subTot').val("");
         cartItem=[];
+        fullTotal=0;
 
 
         Order.push(orders);
